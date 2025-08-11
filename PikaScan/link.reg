@@ -1,0 +1,8 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\pikascan]
+@="URL:pikascan Protocol"
+"URL Protocol"=""
+
+[HKEY_CLASSES_ROOT\pikascan\shell\open\command]
+@="\"C:\\RESPALDO\\desarrollo\\pika\\PikaScan\\PikaScan\\bin\\Debug\\PikaScan.exe\" \"%1\""
