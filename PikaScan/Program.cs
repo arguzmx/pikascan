@@ -1,13 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PikaScan
 {
     internal static class Program
     {
+        private static Form1 _mainForm; 
+        public static Form1 GetMainForm()
+        {
+            return _mainForm;
+        }
+
         /// <summary>
         /// Punto de entrada principal para la aplicación.
         /// </summary>
@@ -17,8 +20,8 @@ namespace PikaScan
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             string deeplink = args.Length > 0 ? args[0] : null;
-
-            Application.Run(new Form1(deeplink));
+            _mainForm = new Form1(deeplink);
+            Application.Run(_mainForm);
         }
     }
 }

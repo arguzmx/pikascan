@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -12,6 +13,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,8 +36,34 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="GdPicture.NET, Version=8.5.0.16, Culture=neutral, PublicKeyToken=b7f298a24d8f9345, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\GdPicture.NET 8\Redist\Framework 4.0\GdPicture.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageProcessor, Version=2.9.0.207, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ImageProcessor.2.9.0\lib\net452\ImageProcessor.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms.Ribbon, Version=2.0.0.0, Culture=neutral, PublicKeyToken=928736e248aa81f9, processorArchitecture=MSIL">
+      <HintPath>..\packages\RibbonWinForms.5.0.1.1\lib\net48\System.Windows.Forms.Ribbon.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,14 +75,99 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Comandos\Command.cs" />
+    <Compile Include="Comandos\CommandBrightContrast.cs" />
+    <Compile Include="Controles\DocumentViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\DocumentViewer.Designer.cs">
+      <DependentUpon>DocumentViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\ImageEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\ImageEditor.Designer.cs">
+      <DependentUpon>ImageEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\JobExplorer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\JobExplorer.Designer.cs">
+      <DependentUpon>JobExplorer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\TWAINCapture.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\TWAINCapture.Designer.cs">
+      <DependentUpon>TWAINCapture.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controles\UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Events\BatchSelectedEventArgs.cs" />
+    <Compile Include="Events\DocumentSelectedEventArgs.cs" />
+    <Compile Include="Events\ImageUpdatedEventArgs.cs" />
+    <Compile Include="Events\PageAddedEventArgs.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\Documento.cs" />
+    <Compile Include="Modelo\ImportResult.cs" />
+    <Compile Include="Modelo\Lote.cs" />
+    <Compile Include="Modelo\Page.cs" />
+    <Compile Include="Modelo\PagedResults.cs" />
+    <Compile Include="Modelo\Pagina.cs" />
+    <Compile Include="Modelo\ParCombo.cs" />
+    <Compile Include="Modelo\Query.cs" />
+    <Compile Include="Modelo\QueryFilter.cs" />
+    <Compile Include="Modelo\QueryParams.cs" />
+    <Compile Include="Modelo\Sesion.cs" />
+    <Compile Include="Modelo\UISession.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Modelo\ImageInfo.cs" />
+    <Compile Include="Servicios\AppSettings.cs" />
+    <Compile Include="Servicios\IAppSettings.cs" />
+    <Compile Include="Servicios\IBaseRepository.cs" />
+    <Compile Include="Servicios\IDocumentService.cs" />
+    <Compile Include="Servicios\ILotesService.cs" />
+    <Compile Include="Servicios\ImageProcessor.cs" />
+    <Compile Include="Servicios\IOController.cs" />
+    <Compile Include="Servicios\IPageService.cs" />
+    <Compile Include="Servicios\NinjectModule.cs" />
+    <Compile Include="Servicios\PikaScanDocumentService.cs" />
+    <Compile Include="Servicios\Repositorio\DatabaseContext.cs" />
+    <Compile Include="Servicios\Repositorio\DocumentService.cs" />
+    <Compile Include="Servicios\Repositorio\LotesService.cs" />
+    <Compile Include="Servicios\Repositorio\PageService.cs" />
+    <Compile Include="Servicios\Repositorio\RepoExceptions.cs" />
+    <Compile Include="Servicios\TWAINConfig.cs" />
+    <Compile Include="Servicios\TWAINController.cs" />
+    <Compile Include="Servicios\UIHelper.cs" />
+    <EmbeddedResource Include="Controles\DocumentViewer.resx">
+      <DependentUpon>DocumentViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\ImageEditor.resx">
+      <DependentUpon>ImageEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\JobExplorer.resx">
+      <DependentUpon>JobExplorer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\TWAINCapture.resx">
+      <DependentUpon>TWAINCapture.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\UserControl1.resx">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -63,6 +177,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -76,5 +191,22 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Forms\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ImageListView\ImageListView.csproj">
+      <Project>{0c295fb8-c6c6-4a40-9f19-05a43f353a04}</Project>
+      <Name>ImageListView</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" />
 </Project>

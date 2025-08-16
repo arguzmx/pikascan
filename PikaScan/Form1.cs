@@ -17,5 +17,10 @@ namespace PikaScan
             InitializeComponent();
             MessageBox.Show("Deeplink recibido: " + deeplink);
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            this.twainCapture1.StartModule();
+        }
     }
 }
