@@ -8,6 +8,9 @@ namespace PikaScan.Servicios.pikaapi
 {
     public class PaginaPika
     {
+        /// <summary>
+        /// Apunta a una ruta de archivo de imagene local
+        /// </summary>
         public string Ruta { get; set; }
     }
 }
