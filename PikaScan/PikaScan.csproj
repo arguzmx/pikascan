@@ -141,6 +141,8 @@
     <Compile Include="Servicios\IOController.cs" />
     <Compile Include="Servicios\IPageService.cs" />
     <Compile Include="Servicios\NinjectModule.cs" />
+    <Compile Include="Servicios\pikaapi\PaginaPika.cs" />
+    <Compile Include="Servicios\pikaapi\UploadApi.cs" />
     <Compile Include="Servicios\PikaScanDocumentService.cs" />
     <Compile Include="Servicios\Repositorio\DatabaseContext.cs" />
     <Compile Include="Servicios\Repositorio\DocumentService.cs" />
