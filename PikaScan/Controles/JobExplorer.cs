@@ -68,7 +68,6 @@ namespace PikaScan.Controles
         }
 
 
-
         public void ShowTailPages()
         {
 
@@ -221,56 +220,45 @@ namespace PikaScan.Controles
             }
         }
 
-        private void Showdocument(Documento d)
+        public void Showdocument(Documento d)
         {
-            //this.documentViewer.ClearPorts();
-            //documento = d;
+            this.documentViewer.ClearPorts();
+            documento = d;
 
-            //if (d == null)
-            //{
-            //    return;
-            //}
+            if (d == null)
+            {
+                return;
+            }
 
-            //try
-            //{
-            //    this.ImLvThumbs.Items.Clear();
-            //    if (!Directory.Exists(d.Path))
-            //    {
-            //        Directory.CreateDirectory(d.Path);
-            //    }
-
-
-
-            //    string cachedir = Path.Combine(d.Path, "cache");
-            //    if (!Directory.Exists(cachedir))
-            //    {
-            //        Directory.CreateDirectory(cachedir);
-            //    }
-
-            //    ImLvThumbs.PersistentCacheDirectory = cachedir;
-
-            //    PopulateListView(d);
+            try
+            {
+                this.ImLvThumbs.Items.Clear();
+                if (!Directory.Exists(d.Path))
+                {
+                    Directory.CreateDirectory(d.Path);
+                }
 
 
-            //}
-            //catch (InvalidPathException pex)
-            //{
-            //    UIHelper.ShowNotification("La ruta del documento no existe", ToolTipIcon.Error);
-            //}
-            //catch (Exception ex)
-            //{
-            //    UIHelper.ShowNotification($"Error al abrir documento {ex.Message}", ToolTipIcon.Error);
-            //}
+                string cachedir = Path.Combine(d.Path, "cache");
+                if (!Directory.Exists(cachedir))
+                {
+                    Directory.CreateDirectory(cachedir);
+                }
+
+                ImLvThumbs.PersistentCacheDirectory = cachedir;
+
+                PopulateListView(d);
+
+
+            }
+            catch (Exception ex)
+            {
+                UIHelper.ShowNotification($"Error al abrir documento {ex.Message}", ToolTipIcon.Error);
+            }
         }
 
         private void PopulateListView(Documento doc)
         {
-            IPageService pageService = CompositionRoot.Resolve<IPageService>();
-
-
-            List<Pagina> ps = pageService.Get(x => x.DocId == doc.Id,
-                y => y.OrderBy(z => z.Index)).ToList();
-
 
 
             // this.imageEditor = Imeditor01;
@@ -281,7 +269,7 @@ namespace PikaScan.Controles
 
 
 
-            foreach (Pagina p in ps)
+            foreach (Pagina p in doc.Paginas)
             {
                 if (p.Name.EndsWith(".pdf", StringComparison.OrdinalIgnoreCase) ||
                     p.Name.EndsWith(".jpg", StringComparison.OrdinalIgnoreCase) ||

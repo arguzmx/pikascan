@@ -1,27 +1,78 @@
-﻿using PikaScan.Servicios.pikaapi;
+﻿using PikaScan.Modelo;
+using PikaScan.Servicios.pikaapi;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
 
 namespace PikaScan
 {
     public partial class Form1 : Form
     {
-        private DTOTokenScanner scanner;
+        public static DTOTokenScanner scanner;
+        public static Documento documento;
+        public static Form1 Instance { get; private set; }
+
+
         public Form1(string deeplink)
         {
             InitializeComponent();
+            Instance = this;
+#if DEBUG
+            deeplink = "%7B%22Id%22%3A8%2C%22Token%22%3A%2206e5ac7a63ae4766af771c656ea2a765%22%2C%22ElementoId%22%3A%22daaec56f-9925-41f1-b4ea-9199d18121ef%22%2C%22VersionId%22%3A%22daaec56f-9925-41f1-b4ea-9199d18121ef%22%2C%22Caducidad%22%3A%222025-09-02T16%3A07%3A18.3393968-06%3A00%22%2C%22PuntoMontajeId%22%3A%229ca3c559-9060-40a7-89c0-0dee976f1444%22%2C%22VolumenId%22%3A%22cd80cd33-33ea-40be-b997-c152d6ea1aad%22%2C%22NombreDocumento%22%3A%22CCC%22%2C%22UrlBase%22%3A%22http%3A%2F%2Flocalhost%3A5000%2Fapi%2Fv1.0%2Fupload%22%7D";
+#endif
 
-            if (deeplink != null)
+
+            if (deeplink != null) {
                 scanner = ObtenerDatosDeeplink(deeplink);
+                if (scanner == null)
+                {
+                    MessageBox.Show("El enlace no es valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    this.Close();
+                } else
+                {
+                    this.Text = $"PikaScan - {scanner.NombreDocumento}";
+                    this.twainCapture1.jobExplorer = this.jobExplorer1;
+                    this.jobExplorer1.documentViewer = this.documentViewer1;
 
-            MessageBox.Show("Deeplink recibido: " + deeplink);
+                    string scanPAth = Path.Combine(Application.StartupPath, "scan", scanner.ElementoId);
+                    string docPath = Path.Combine(Application.StartupPath, "scan", scanner.ElementoId, "doc.json");
+                    if (Directory.Exists(scanPAth) && File.Exists(docPath) )
+                    {
+                        documento = Newtonsoft.Json.JsonConvert.DeserializeObject<Documento>(File.ReadAllText(docPath));    
+                    }
+                    else
+                    {
+                        documento = new Documento()
+                        {
+                            Id = scanner.ElementoId,
+                            Nombre = scanner.NombreDocumento,
+                            FechaCreacion = DateTime.Now,
+                            EstadoTrabajo = EstadoTrabajo.Abierto,
+                            CantidadPaginas = 0,
+                            FechaModificacion = DateTime.Now,
+                            IdLote = "",
+                            Indice = 0,
+                            Paginas = new List<Pagina>(),
+                            Path = Path.Combine(Application.StartupPath, "scan", scanner.ElementoId),
+                            RemoteId = "",
+                            TipoTrabajo = TipoTrabajo.Local,
+                            UserId = ""
+                        };
+
+                    }
+
+                    this.twainCapture1.AjustaBotonera();
+
+                    this.jobExplorer1.Showdocument(documento);
+                }
+            }
+            else
+            {
+                MessageBox.Show("El programa debe ejecutarse desde Pika-GD");
+                this.Close();
+                Application.Exit();
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -31,46 +82,32 @@ namespace PikaScan
 
         private DTOTokenScanner ObtenerDatosDeeplink(string deeplink = null)
         {
-            var uri = new Uri(deeplink);
-            var consulta = uri.Query.TrimStart('?');
-            var datos = new DTOTokenScanner();
-
-            foreach ( var param in consulta.Split('&'))
+            try
             {
-                var claveValor = param.Split(new[] { '=' }, 2);
 
-                if (claveValor.Length != 2)
-                    continue;
+               string data = Uri.UnescapeDataString(deeplink);
 
-                string clave = Uri.UnescapeDataString(claveValor[0]);
-                string valor = Uri.UnescapeDataString(claveValor[1]);
+                DTOTokenScanner token = Newtonsoft.Json.JsonConvert.DeserializeObject<DTOTokenScanner>(data);
+ 
 
-                switch (clave)
-                {
-                    case "token":
-                        datos.Token = valor.Contains("=") ? valor.Split('=').Last() : valor;
-                        break;
-                    case "elementoId":
-                        datos.ElementoId = valor; break;
-                    case "versionId":
-                        datos.VersionId = valor; break;
-                    case "volumenId":
-                        datos.VolumenId = valor; break;
-                    case "puntoMontajeId":
-                        datos.PuntoMontajeId = valor; break;
-                    case "caducidad":
-                        if (DateTime.TryParse(valor, out DateTime fechaConvertida))
-                            datos.Caducidad = fechaConvertida;
-                        break;
-                }
+                return token;
+            }
+            catch (Exception)
+            {
+
+                return null;
             }
 
-            return datos;
         }
 
         private void twainCapture1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        public void ShowNotification(string text, ToolTipIcon type)
+        {
+            tsLAbel.Text = text;
         }
 
         private async void button1_Click(object sender, EventArgs e)
@@ -84,11 +121,35 @@ namespace PikaScan
                 new PaginaPika { Ruta = @"C:\Users\desarrollo\Pictures\IMG\cars.jpg" },
             };
 
-            var servicio = new UploadApi();
-
-            await servicio.EnviarPaginas(paginas, scanner);
-
 
         }
+
+        private void documentViewer1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        public void UpdateProgress(int value, int max)
+        {
+            if (Instance != null)
+            {
+                Application.DoEvents();
+                if (value >= max)
+                {
+                    Instance.tsProgressSend.Visible = false;
+                    Instance.tsProgressSend.Value = 0;
+                    Instance.tsLAbel.Text = "Enviío finalizado";
+                }
+                else
+                {
+                    Instance.tsProgressSend.Visible = true;
+                    Instance.tsProgressSend.Minimum = 0;
+                    Instance.tsProgressSend.Maximum = max;
+                    Instance.tsProgressSend.Value = value;
+                    Instance.tsLAbel.Text = $"Enviando página {value} de {max}";
+                }
+                Application.DoEvents();
+            }
+        }   
     }
 }

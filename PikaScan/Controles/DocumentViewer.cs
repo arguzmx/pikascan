@@ -115,7 +115,10 @@ namespace PikaScan.Controles
         private void ShowPages()
         {
 
-
+            if(paginas == null)
+            {
+                paginas = new List<Pagina>();
+            }
             for (int i = 1; i <= UISession.availableDisplays; i++)
             {
                 int nextitem = 0;

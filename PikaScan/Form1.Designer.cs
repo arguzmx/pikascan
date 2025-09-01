@@ -28,31 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ribbon1 = new System.Windows.Forms.Ribbon();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.twainCapture1 = new PikaScan.Controles.TWAINCapture();
-            this.button1 = new System.Windows.Forms.Button();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.tsLAbel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tsProgressSend = new System.Windows.Forms.ToolStripProgressBar();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.jobExplorer1 = new PikaScan.Controles.JobExplorer();
+            this.documentViewer1 = new PikaScan.Controles.DocumentViewer();
+            this.groupBox1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // ribbon1
+            // groupBox1
             // 
-            this.ribbon1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ribbon1.Location = new System.Drawing.Point(0, 0);
-            this.ribbon1.Margin = new System.Windows.Forms.Padding(2);
-            this.ribbon1.Minimized = false;
-            this.ribbon1.Name = "ribbon1";
-            // 
-            // 
-            // 
-            this.ribbon1.OrbDropDown.BorderRoundness = 8;
-            this.ribbon1.OrbDropDown.Location = new System.Drawing.Point(0, 0);
-            this.ribbon1.OrbDropDown.Name = "";
-            this.ribbon1.OrbDropDown.Size = new System.Drawing.Size(527, 447);
-            this.ribbon1.OrbDropDown.TabIndex = 0;
-            this.ribbon1.OrbVisible = false;
-            this.ribbon1.RibbonTabFont = new System.Drawing.Font("Trebuchet MS", 9F);
-            this.ribbon1.Size = new System.Drawing.Size(600, 76);
-            this.ribbon1.TabIndex = 0;
-            this.ribbon1.Text = "ribbon";
+            this.groupBox1.Controls.Add(this.twainCapture1);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1144, 106);
+            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabStop = false;
             // 
             // twainCapture1
             // 
@@ -60,45 +61,112 @@
             this.twainCapture1.DocumentId = null;
             this.twainCapture1.documentViewer = null;
             this.twainCapture1.jobExplorer = null;
-            this.twainCapture1.Location = new System.Drawing.Point(82, 136);
-            this.twainCapture1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.twainCapture1.Location = new System.Drawing.Point(6, 11);
+            this.twainCapture1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.twainCapture1.Name = "twainCapture1";
-            this.twainCapture1.Size = new System.Drawing.Size(410, 93);
+            this.twainCapture1.Size = new System.Drawing.Size(800, 90);
             this.twainCapture1.TabIndex = 1;
             this.twainCapture1.Load += new System.EventHandler(this.twainCapture1_Load);
             // 
-            // button1
+            // statusStrip1
             // 
-            this.button1.Location = new System.Drawing.Point(355, 331);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Prueba";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsLAbel,
+            this.tsProgressSend});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 577);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1144, 22);
+            this.statusStrip1.TabIndex = 4;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // tsLAbel
+            // 
+            this.tsLAbel.Name = "tsLAbel";
+            this.tsLAbel.Size = new System.Drawing.Size(71, 17);
+            this.tsLAbel.Text = "Pikascan 1.0";
+            // 
+            // tsProgressSend
+            // 
+            this.tsProgressSend.Name = "tsProgressSend";
+            this.tsProgressSend.Size = new System.Drawing.Size(100, 16);
+            this.tsProgressSend.Visible = false;
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 106);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.jobExplorer1);
+            this.splitContainer1.Panel1MinSize = 125;
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.documentViewer1);
+            this.splitContainer1.Size = new System.Drawing.Size(1144, 471);
+            this.splitContainer1.SplitterDistance = 125;
+            this.splitContainer1.TabIndex = 6;
+            // 
+            // jobExplorer1
+            // 
+            this.jobExplorer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.jobExplorer1.documentViewer = null;
+            this.jobExplorer1.Location = new System.Drawing.Point(0, 0);
+            this.jobExplorer1.mainMenu = null;
+            this.jobExplorer1.Name = "jobExplorer1";
+            this.jobExplorer1.Size = new System.Drawing.Size(125, 471);
+            this.jobExplorer1.TabIndex = 5;
+            // 
+            // documentViewer1
+            // 
+            this.documentViewer1.BgColor = System.Drawing.Color.Black;
+            this.documentViewer1.DisplayCount = 1;
+            this.documentViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.documentViewer1.documento = null;
+            this.documentViewer1.Location = new System.Drawing.Point(0, 0);
+            this.documentViewer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.documentViewer1.Name = "documentViewer1";
+            this.documentViewer1.Size = new System.Drawing.Size(1015, 471);
+            this.documentViewer1.TabIndex = 0;
+            this.documentViewer1.Load += new System.EventHandler(this.documentViewer1_Load);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 487);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.twainCapture1);
-            this.Controls.Add(this.ribbon1);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.ClientSize = new System.Drawing.Size(1144, 599);
+            this.Controls.Add(this.splitContainer1);
+            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "PikaScan";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Ribbon ribbon1;
         private Controles.TWAINCapture twainCapture1;
-        private System.Windows.Forms.Button button1;
+        private Controles.DocumentViewer documentViewer1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel tsLAbel;
+        private System.Windows.Forms.ToolStripProgressBar tsProgressSend;
+        private Controles.JobExplorer jobExplorer1;
+        private System.Windows.Forms.SplitContainer splitContainer1;
     }
 }
 

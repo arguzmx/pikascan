@@ -17,10 +17,16 @@ namespace PikaScan
         [STAThread]
         static void Main(string[] args)
         {
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            string deeplink = args.Length > 0 ? args[0] : null;
+            string deeplink = args.Length > 0 ? args[0] : "";
+            if (deeplink.IndexOf("=") > 0)
+            {
+                deeplink = deeplink.Split('=')[1];
+            }
             _mainForm = new Form1(deeplink);
+            if(_mainForm!=null)
             Application.Run(_mainForm);
         }
     }

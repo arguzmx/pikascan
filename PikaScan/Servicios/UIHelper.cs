@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Linq;
-
+using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
 namespace PikaScan
@@ -15,35 +15,7 @@ namespace PikaScan
 
         public static  void ShowNotification(string text, ToolTipIcon type) {
 
-            //NotifyIcon nicon = ((MainDoc)Program.MainForm).MainNotifyIcon;
-
-            //nicon.BalloonTipTitle = "";
-
-            //switch (type) {
-            //    case ToolTipIcon.Info:
-            //        nicon.BalloonTipTitle = "Información";
-            //        break;
-
-            //    case ToolTipIcon.Warning:
-            //        nicon.BalloonTipTitle = "Advertencia";
-            //        break;
-
-            //    case ToolTipIcon.Error:
-            //        nicon.BalloonTipTitle = "Error";
-            //        break;
-
-            //    case ToolTipIcon.None:
-            //        nicon.BalloonTipTitle = "";
-            //        break;
-
-             
-            //}
-
-            //nicon.BalloonTipIcon = type;
-            //nicon.BalloonTipText = text;
-            
-            //nicon.ShowBalloonTip(1000);
-
+            Form1.Instance.ShowNotification(text, type);    
         }
 
         static public Bitmap ScaleImage(Image image, int maxWidth, int maxHeight)

@@ -1,10 +1,14 @@
-﻿using PikaScan.Modelo;
+﻿using Ninject.Planning;
+using PikaScan.Controles;
+using PikaScan.Modelo;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace PikaScan.Servicios
 {
@@ -12,42 +16,38 @@ namespace PikaScan.Servicios
     {
         public Documento Add(Documento t)
         {
-            throw new NotImplementedException();
+            // throw new NotImplementedException();
+            return null;
         }
 
         public void AddPages(string Id, int count)
         {
-            throw new NotImplementedException();
+            // throw new NotImplementedException();
         }
 
         public void Delete(string Id)
         {
-            throw new NotImplementedException();
+            // throw new NotImplementedException();
         }
 
         public void DelPages(string Id, int count)
         {
-            throw new NotImplementedException();
+            // throw new NotImplementedException();
         }
+
+        //documento = new Documento()
+        //{
+        //    CantidadPaginas = 0, Nombre = scanner.NombreDocumento, Id = scanner.ElementoId, Paginas = new List<Pagina>(), 
+        //                Path = Path.Combine(Application.StartupPath, "scan", scanner.ElementoId) };
+        //            if (!Directory.Exists(documento.Path))
+        //            {
+        //                Directory.CreateDirectory(documento.Path);
+        //            }
+        //            this.jobExplorer1.Showdocument(documento);
 
         public Documento Get(string Id)
         {
-            return new Documento()
-            {
-                Id = Id,
-                Nombre = "Documento de prueba",
-                FechaCreacion = DateTime.Now,
-                EstadoTrabajo = EstadoTrabajo.Abierto,
-                CantidadPaginas = 0,
-                FechaModificacion = DateTime.Now,
-                IdLote = "",
-                Indice = 0,
-                Paginas = new List<Pagina>(),
-                Path = "",
-                RemoteId = "",
-                TipoTrabajo = TipoTrabajo.Local,
-                UserId = ""
-            };
+            throw new NotImplementedException();
         }
 
         public IEnumerable<Documento> Get(Expression<Func<Documento, bool>> filter = null, Func<IQueryable<Documento>, IOrderedQueryable<Documento>> orderBy = null, string includeProperties = "")

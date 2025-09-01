@@ -1,9 +1,14 @@
 ﻿using GdPicture;
+using Ninject.Planning;
 using PikaScan.Modelo;
 using PikaScan.Servicios;
+using PikaScan.Servicios.pikaapi;
+using PikaScan.Servicios.pikascan;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PikaScan.Controles
@@ -28,7 +33,7 @@ namespace PikaScan.Controles
         private bool InSession = false;
         private bool LoadingScanners = false;
         private TWAINController controller = null;
-
+        private bool capturando = false;
         public string DocumentId { get; set; }
         public JobExplorer jobExplorer { get; set; }
 
@@ -42,12 +47,10 @@ namespace PikaScan.Controles
 
         private void TWAINCapture_Load(object sender, EventArgs e)
         {
-            pbStop.Visible = false;
-            pbStop.Top = btnCameraAquire.Top;
-            pbStop.Left = btnCameraAquire.Left;
             AppSettings aset =new AppSettings();
             IDocumentService ds = new PikaScanDocumentService();
-            controller = new TWAINController(ds, null, aset);
+            IPageService pageService = new ServicioPaginas("1");
+            controller = new TWAINController(ds, pageService, aset);
         }
 
         public void ReleaseModule()
@@ -57,6 +60,19 @@ namespace PikaScan.Controles
                 g.TwainCloseSource();
                 InSession = false;
             }
+        }
+
+        public void AjustaBotonera()
+        {
+            pbSend.Visible = false;
+            btnCameraAquire.Visible = !capturando;
+            pbStop.Visible = capturando;
+
+            if(!capturando && Form1.documento.Paginas.Count > 0)
+            {
+                pbSend.Visible = true;
+            } 
+            
         }
 
         public void StartModule()
@@ -85,7 +101,7 @@ namespace PikaScan.Controles
                         ParCombo p = new ParCombo() { Display = g.TwainGetSourceName(h, i), Value = i.ToString() };
                         l.Add(p);
                     }
-                }
+                } 
 
                 this.cmbScanners.DataSource = null;
                 this.cmbScanners.Items.Clear();
@@ -366,8 +382,6 @@ namespace PikaScan.Controles
 
                     switch (format)
                     {
-
-
                         case TwainImageFileFormats.TWFF_BMP:
                             formatlabel = "BMP";
                             break;
@@ -503,11 +517,10 @@ namespace PikaScan.Controles
 
         private void btnCameraAquire_Click(object sender, EventArgs e)
         {
-            AllowAquire = true;
+            AllowAquire = this.cmbScanners.Items.Count > 0;
             if (AllowAquire)
             {
                 Aquire();
-                MessageBox.Show("La captura se ha iniciado. Por favor, espere a que finalice.", "Captura en curso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -531,7 +544,7 @@ namespace PikaScan.Controles
                 err = err.TrimEnd('\r');
             }
 
-            UIHelper.ShowNotification($"Ocurrióo un error al realizar la captura: \r\n {err}", ToolTipIcon.Error);
+            UIHelper.ShowNotification($"Ocurrió un error al realizar la captura: {err}", ToolTipIcon.Error);
         }
 
         private void C_PageAdded(object sender, Events.PageAddedEventArgs e)
@@ -550,7 +563,9 @@ namespace PikaScan.Controles
 
         private void Aquire()
         {
-
+            UIHelper.ShowNotification("Iniciando captura", ToolTipIcon.Info);
+            capturando = true;
+            AjustaBotonera();
             if (InSession)
             {
                 g.TwainCloseSource();
@@ -563,9 +578,7 @@ namespace PikaScan.Controles
                 return;
             }
 
-            pbStop.Visible = true;
-            btnCameraAquire.Visible = false;
-
+            
             //controller = CompositionRoot.Resolve<TWAINController>();
             controller.handle = this.h;
             controller.config = config;
@@ -588,10 +601,9 @@ namespace PikaScan.Controles
 
 
             OnImportEnded(new EventArgs());
-
-            btnCameraAquire.Visible = true;
-
-
+            UIHelper.ShowNotification("Captura finalizada", ToolTipIcon.Info);
+            capturando = false;
+            AjustaBotonera();
         }
 
         private void Controller_DoEvents(object sender, EventArgs e)
@@ -667,6 +679,30 @@ namespace PikaScan.Controles
                 controller.CancelImport();
             }
             pbStop.Visible = false;
+        }
+
+        private async void pbSend_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var servicio = new UploadApi();
+
+                var paginas = new List<PaginaPika>();
+                foreach (var p in Form1.documento.Paginas)
+                {
+                    paginas.Add(new PaginaPika()
+                    {
+                        Ruta = Path.Combine(Form1.documento.Path, p.Name),
+                    });
+                }
+
+                await servicio.EnviarPaginas(paginas, Form1.scanner);
+
+            }
+            catch (Exception)
+            {
+                
+            }
         }
     }
 }

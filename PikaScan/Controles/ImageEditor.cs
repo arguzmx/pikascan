@@ -341,15 +341,7 @@ namespace PikaScan.Controles
 
                 }
 
-
-
-
-
-
-
             }
-
-
         }
 
 
@@ -360,64 +352,69 @@ namespace PikaScan.Controles
 
         public void PreviewBCSG(CommandBrightContrast c)
         {
-
-            if (Source != "")
+            try
             {
-                if (BackupSource == "")
+                if (Source != "")
                 {
-                    CreateBackup();
-                }
-
-
-            }
-
-            if (!isJPG)
-            {
-                if (TempImgId == 0)
-                {
-                    TempImgId = gdp.CreateGdPictureImageFromFile(BackupSource);
-                }
-
-                if (TempImgId != 0)
-                {
-
-                    gdp.CopyToClipboard(TempImgId);
-
-                    int id = gdp.CreateGdPictureImageFromClipboard();
-                    if (id != 0)
+                    if (BackupSource == "")
                     {
-                        gdp.SetBCSG(id, c.Brightness, c.Contrast, c.Saturation, 0);
-                        gdp.CopyToClipboard(id);
-                        this.gdViewer1.DisplayFromClipboard();
-                        gdp.ReleaseGdPictureImage(id);
+                        CreateBackup();
                     }
 
+
                 }
-            }
-            else
-            {
-                byte[] photoBytes = File.ReadAllBytes(this.BackupSource);
-                ISupportedImageFormat format = new JpegFormat { Quality = 100 };
-                using (MemoryStream inStream = new MemoryStream(photoBytes))
+                
+
+                if (!isJPG)
                 {
-                    using (MemoryStream outStream = new MemoryStream())
+                    if (TempImgId == 0)
                     {
-                        using (ImageFactory imageFactory = new ImageFactory(preserveExifData: true))
+                        TempImgId = gdp.CreateGdPictureImageFromFile(BackupSource);
+                    }
+
+                    if (TempImgId != 0)
+                    {
+
+                        gdp.CopyToClipboard(TempImgId);
+
+                        int id = gdp.CreateGdPictureImageFromClipboard();
+                        if (id != 0)
                         {
-
-                            imageFactory.Load(inStream)
-                                        .Brightness(c.Brightness)
-                                        .Contrast(c.Contrast)
-                                        .Saturation(c.Saturation)
-                                        .Format(format)
-                                        .Save(outStream);
+                            gdp.SetBCSG(id, c.Brightness, c.Contrast, c.Saturation, 0);
+                            gdp.CopyToClipboard(id);
+                            this.gdViewer1.DisplayFromClipboard();
+                            gdp.ReleaseGdPictureImage(id);
                         }
-                        this.gdViewer1.DisplayFromStream(outStream);
+
+                    }
+                }
+                else
+                {
+                    byte[] photoBytes = File.ReadAllBytes(this.BackupSource);
+                    ISupportedImageFormat format = new JpegFormat { Quality = 100 };
+                    using (MemoryStream inStream = new MemoryStream(photoBytes))
+                    {
+                        using (MemoryStream outStream = new MemoryStream())
+                        {
+                            using (ImageFactory imageFactory = new ImageFactory(preserveExifData: true))
+                            {
+
+                                imageFactory.Load(inStream)
+                                            .Brightness(c.Brightness)
+                                            .Contrast(c.Contrast)
+                                            .Saturation(c.Saturation)
+                                            .Format(format)
+                                            .Save(outStream);
+                            }
+                            this.gdViewer1.DisplayFromStream(outStream);
+                        }
                     }
                 }
             }
+            catch (Exception)
+            {
 
-
+            }
         }
 
 
@@ -534,10 +531,19 @@ namespace PikaScan.Controles
 
         private void SaveFile(int id, string filepath)
         {
+            this.gdViewer1.CloseDocument();
+
             FileInfo fi = new FileInfo(filepath);
+            if (File.Exists(this.Source))
+            {
+                File.Delete(this.Source);   
+            }
 
             switch (fi.Extension.ToLower())
             {
+                case ".bmp":
+                    gdp.SaveAsBMP(id, this.Source);
+                    break;
 
                 case ".png":
                     gdp.SaveAsPNG(id, this.Source);
@@ -551,6 +557,7 @@ namespace PikaScan.Controles
                     gdp.SaveAsGIF(id, this.Source);
                     break;
             }
+            this.gdViewer1.DisplayFromFile(this.Source);
         }
 
 
@@ -617,7 +624,28 @@ namespace PikaScan.Controles
 
                 if (!isJPG)
                 {
-                    gdp.Rotate(id, rotation);
+                    switch (rotation)
+                    {
+                        case RotateFlipType.Rotate180FlipNone:
+                            gdp.RotateAngle(id, 180);
+                            break;
+
+                        case RotateFlipType.Rotate90FlipNone:
+                            gdp.RotateAngle(id, 90);
+                            break;
+
+                        case RotateFlipType.Rotate270FlipNone:
+                            gdp.RotateAngle(id, 270);
+                            break;
+
+                        case RotateFlipType.RotateNoneFlipX:
+                            gdp.Rotate(id, RotateFlipType.RotateNoneFlipX );
+                            break;
+
+                        case RotateFlipType.RotateNoneFlipY:
+                            gdp.Rotate(id, RotateFlipType.RotateNoneFlipY);
+                            break;
+                    }
                     SaveFile(id, this.Source);
                     gdp.ReleaseGdPictureImage(id);
 

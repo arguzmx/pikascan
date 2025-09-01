@@ -36,12 +36,12 @@ namespace PikaScan.Servicios
             }
         }
 
+
         public override ImportResult Import(bool isDemoMode, string DocumentId)
         {
             ImportResult r = new ImportResult();
 
-            Documento d = documentService.Get(DocumentId);
-
+            Documento d = Form1.documento;
 
             #region Validacion
 
@@ -122,7 +122,7 @@ namespace PikaScan.Servicios
             switch (config.ImageFormat)
             {
                 case TwainImageFileFormats.TWFF_BMP:
-                    Extesion = ".BPM";
+                    Extesion = ".JPG";
                     break;
 
                 case TwainImageFileFormats.TWFF_JFIF:
@@ -156,8 +156,8 @@ namespace PikaScan.Servicios
                 {
                     switch (Extesion)
                     {
-                        case ".BPM":
-                            g.SaveAsBMP(ImageID, FileName);
+                        case ".BMP":
+                            g.SaveAsJPEG(ImageID, FileName);
                             break;
 
                         case ".JPG":
@@ -174,13 +174,13 @@ namespace PikaScan.Servicios
                     }
                     g.ReleaseGdPictureImage(ImageID);
 
-                    //base.AddPage(new FileInfo(FileName), d, SourceType.Scanner, 0, this.isDemoMode, 0);
-                    //if (File.Exists(FileName))
-                    //{
-                    //    File.Delete(FileName);
-                    //}
+                    base.AddPage(new FileInfo(FileName), d, SourceType.Scanner, 0, this.isDemoMode, 0);
+                    if (File.Exists(FileName))
+                    {
+                        File.Delete(FileName);
+                    }
                 }
-               
+
                 OnDoEvents();
             
 

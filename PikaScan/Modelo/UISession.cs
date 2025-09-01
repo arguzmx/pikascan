@@ -33,7 +33,7 @@ namespace PikaScan.Modelo
         public static ActionSource SourceType { get; set; }
 
 
-        public static int availableDisplays { get; set; }
+        public static int availableDisplays { get; set; } = 1;
 
         public static bool showThumbnails { get; set; }
 

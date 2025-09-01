@@ -1,14 +1,8 @@
-﻿using Ninject.Activation;
-using PikaScan.Modelo;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
-using System.IO.Pipes;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -16,9 +10,13 @@ namespace PikaScan.Servicios.pikaapi
 {
     public class UploadApi
     {
-        private string _baseURL = "http://localhost:5000/api/v1.0/upload";
+        private string _baseURL = string.Empty;
         public async Task EnviarPaginas(List<PaginaPika> paginas, DTOTokenScanner dto)
         {
+            bool uploadCompleto = true;
+
+            _baseURL = string.IsNullOrEmpty(dto.UrlBase?.TrimEnd('/')) ? "http://localhost:5000/api/v1.0/upload" : dto.UrlBase?.TrimEnd('/');
+
             var httpClient = new HttpClient
             {
                 Timeout = Timeout.InfiniteTimeSpan
@@ -26,8 +24,15 @@ namespace PikaScan.Servicios.pikaapi
 
             string transactionId = Guid.NewGuid().ToString();
 
+            Form1.Instance.UpdateProgress(0, paginas.Count + 1);
+            int index = 0;
             foreach (var pagina in paginas)
             {
+                index++;
+                Form1.Instance.UpdateProgress(index, paginas.Count + 1);
+
+                await Task.Delay(2000);
+
                 if (!File.Exists(pagina.Ruta))
                     continue;
 
@@ -39,34 +44,70 @@ namespace PikaScan.Servicios.pikaapi
                     dto.Indice++;
                     payload = ConvertirAPayload(pagina, dto, transactionId, out stream);
 
-                    using (payload)
-                    using (var request = new HttpRequestMessage(HttpMethod.Post, $"{_baseURL}/scanner/pagina"))
+                    string url = "";
+                    if (index == 1)
                     {
-                        request.Content = payload;
-                        request.Headers.Add("x-scanner-token", dto.Token);
-
-                        using (var response = await httpClient.SendAsync(
-                request, HttpCompletionOption.ResponseHeadersRead))
-                        {
-                            response.EnsureSuccessStatusCode();
-                        }
+                        url = $"{_baseURL}/scanner/pagina?restart=true";
                     }
+                    else
+                    {
+                        url = $"{_baseURL}/scanner/pagina?restart=false";
+                    }
+
+                        using (payload)
+                        using (var request = new HttpRequestMessage(HttpMethod.Post, url))
+                        {
+                            request.Content = payload;
+                            request.Headers.Add("x-scanner-token", dto.Token);
+
+                            var response = await httpClient.SendAsync(request, HttpCompletionOption.ResponseHeadersRead);
+                            if (response.IsSuccessStatusCode)
+                            {
+
+                            }
+                            else
+                            {
+                                uploadCompleto = false;
+                            }
+
+                        }
                 }
+                catch (Exception ex)
+                {
+                    Form1.Instance.UpdateProgress(1, 1);
+                    uploadCompleto =false;
+                    Form1.Instance.ShowNotification($"Error enviando página {index}: {ex.Message}", System.Windows.Forms.ToolTipIcon.Error);
+                    break;
+                }   
                 finally
                 {
                     if(stream != null)
                         stream.Dispose();
                 }
+            }
 
-                using (var completeRequest = new HttpRequestMessage(HttpMethod.Post, $"{_baseURL}/scanner/completar/{transactionId}"))
+            if(uploadCompleto)
+            {
+                try
                 {
-                    completeRequest.Headers.Add("x-scanner-token", dto.Token);
-
-                    using (var completeResponse = await httpClient.SendAsync(
-                completeRequest, HttpCompletionOption.ResponseHeadersRead))
+                    using (var completeRequest = new HttpRequestMessage(HttpMethod.Post, $"{_baseURL}/scanner/completar/{transactionId}"))
                     {
-                        completeResponse.EnsureSuccessStatusCode();
+                        completeRequest.Headers.Add("x-scanner-token", dto.Token);
+                        var completeResponse = await httpClient.SendAsync(completeRequest, HttpCompletionOption.ResponseHeadersRead);
+                        if (completeResponse.IsSuccessStatusCode)
+                        {
+
+                        }
+                        else
+                        {
+                            uploadCompleto = false;
+                        }
                     }
+                }
+                catch (Exception ex)
+                {
+                    Form1.Instance.UpdateProgress(1, 1);
+                    Form1.Instance.ShowNotification($"Error al finalizar la transacción de carga: {ex.Message}", System.Windows.Forms.ToolTipIcon.Error);
                 }
 
             }

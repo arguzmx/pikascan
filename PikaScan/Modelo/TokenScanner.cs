@@ -1,8 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace PikaScan.Servicios.pikaapi
+namespace PikaScan.Modelo
 {
-    public class DTOTokenScanner
+    /// <summary>
+    /// DEfine un token de acceso para un dispositivo de digitalziacion.
+    /// </summary>
+    public class TokenScanner
     {
         /// <summary>
         /// Identificador unico del token
@@ -34,22 +41,5 @@ namespace PikaScan.Servicios.pikaapi
         /// NOmbr del documento en edicion
         /// </summary>
         public string NombreDocumento { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public string VolumenId { get; set; }
-
-        public string PuntoMontajeId { get; set; }
-
-        /// <summary>
-        /// Url bas del servivio de digitalización.
-        /// </summary>
-        public string UrlBase { get; set; }
-
-        /// <summary>
-        ///     
-        /// </summary>
-        public int Indice { get; set; } = 1;
     }
 }

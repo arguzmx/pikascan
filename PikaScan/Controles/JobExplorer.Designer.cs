@@ -33,13 +33,12 @@
             this.splitContainerExplorer = new System.Windows.Forms.SplitContainer();
             this.TvDocuments = new System.Windows.Forms.TreeView();
             this.ImlTvDocs = new System.Windows.Forms.ImageList(this.components);
+            this.ImLvThumbs = new Manina.Windows.Forms.ImageListView();
             this.panelInfo = new System.Windows.Forms.Panel();
             this.lblJobName = new System.Windows.Forms.Label();
-            this.ImLvThumbs = new Manina.Windows.Forms.ImageListView();
             this.pbInfo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerExplorer)).BeginInit();
             this.splitContainerExplorer.Panel1.SuspendLayout();
-            this.splitContainerExplorer.Panel2.SuspendLayout();
             this.splitContainerExplorer.SuspendLayout();
             this.panelInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbInfo)).BeginInit();
@@ -47,22 +46,18 @@
             // 
             // splitContainerExplorer
             // 
-            this.splitContainerExplorer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainerExplorer.Location = new System.Drawing.Point(0, 60);
+            this.splitContainerExplorer.Location = new System.Drawing.Point(84, 167);
             this.splitContainerExplorer.Name = "splitContainerExplorer";
             // 
             // splitContainerExplorer.Panel1
             // 
             this.splitContainerExplorer.Panel1.Controls.Add(this.TvDocuments);
             this.splitContainerExplorer.Panel1MinSize = 100;
-            // 
-            // splitContainerExplorer.Panel2
-            // 
-            this.splitContainerExplorer.Panel2.Controls.Add(this.ImLvThumbs);
             this.splitContainerExplorer.Panel2MinSize = 100;
-            this.splitContainerExplorer.Size = new System.Drawing.Size(500, 540);
-            this.splitContainerExplorer.SplitterDistance = 250;
+            this.splitContainerExplorer.Size = new System.Drawing.Size(416, 433);
+            this.splitContainerExplorer.SplitterDistance = 208;
             this.splitContainerExplorer.TabIndex = 0;
+            this.splitContainerExplorer.Visible = false;
             // 
             // TvDocuments
             // 
@@ -76,7 +71,7 @@
             this.TvDocuments.Location = new System.Drawing.Point(0, 0);
             this.TvDocuments.Name = "TvDocuments";
             this.TvDocuments.SelectedImageIndex = 0;
-            this.TvDocuments.Size = new System.Drawing.Size(250, 540);
+            this.TvDocuments.Size = new System.Drawing.Size(208, 433);
             this.TvDocuments.TabIndex = 0;
             this.TvDocuments.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.TvDocuments_AfterSelect);
             this.TvDocuments.DoubleClick += new System.EventHandler(this.TvDocuments_DoubleClick);
@@ -86,28 +81,6 @@
             this.ImlTvDocs.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ImlTvDocs.ImageStream")));
             this.ImlTvDocs.TransparentColor = System.Drawing.Color.Transparent;
             this.ImlTvDocs.Images.SetKeyName(0, "book-icon.png");
-            // 
-            // panelInfo
-            // 
-            this.panelInfo.Controls.Add(this.lblJobName);
-            this.panelInfo.Controls.Add(this.pbInfo);
-            this.panelInfo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelInfo.Location = new System.Drawing.Point(0, 0);
-            this.panelInfo.Name = "panelInfo";
-            this.panelInfo.Size = new System.Drawing.Size(500, 60);
-            this.panelInfo.TabIndex = 1;
-            // 
-            // lblJobName
-            // 
-            this.lblJobName.BackColor = System.Drawing.SystemColors.Control;
-            this.lblJobName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblJobName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblJobName.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.lblJobName.Location = new System.Drawing.Point(60, 0);
-            this.lblJobName.Name = "lblJobName";
-            this.lblJobName.Size = new System.Drawing.Size(440, 60);
-            this.lblJobName.TabIndex = 1;
-            this.lblJobName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ImLvThumbs
             // 
@@ -119,10 +92,31 @@
             this.ImLvThumbs.PersistentCacheDirectory = "";
             this.ImLvThumbs.PersistentCacheSize = ((long)(100));
             this.ImLvThumbs.ShowCheckBoxes = true;
-            this.ImLvThumbs.Size = new System.Drawing.Size(246, 540);
+            this.ImLvThumbs.Size = new System.Drawing.Size(500, 600);
             this.ImLvThumbs.TabIndex = 0;
             this.ImLvThumbs.UseWIC = true;
             this.ImLvThumbs.ItemClick += new Manina.Windows.Forms.ItemClickEventHandler(this.ImLvThumbs_ItemClick);
+            // 
+            // panelInfo
+            // 
+            this.panelInfo.Controls.Add(this.lblJobName);
+            this.panelInfo.Controls.Add(this.pbInfo);
+            this.panelInfo.Location = new System.Drawing.Point(139, 37);
+            this.panelInfo.Name = "panelInfo";
+            this.panelInfo.Size = new System.Drawing.Size(500, 60);
+            this.panelInfo.TabIndex = 1;
+            this.panelInfo.Visible = false;
+            // 
+            // lblJobName
+            // 
+            this.lblJobName.BackColor = System.Drawing.SystemColors.Control;
+            this.lblJobName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblJobName.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.lblJobName.Location = new System.Drawing.Point(287, 0);
+            this.lblJobName.Name = "lblJobName";
+            this.lblJobName.Size = new System.Drawing.Size(213, 60);
+            this.lblJobName.TabIndex = 1;
+            this.lblJobName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pbInfo
             // 
@@ -139,13 +133,13 @@
             // JobExplorer
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.Controls.Add(this.ImLvThumbs);
             this.Controls.Add(this.splitContainerExplorer);
             this.Controls.Add(this.panelInfo);
             this.Name = "JobExplorer";
             this.Size = new System.Drawing.Size(500, 600);
             this.Load += new System.EventHandler(this.JobExplorer_Load);
             this.splitContainerExplorer.Panel1.ResumeLayout(false);
-            this.splitContainerExplorer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerExplorer)).EndInit();
             this.splitContainerExplorer.ResumeLayout(false);
             this.panelInfo.ResumeLayout(false);
