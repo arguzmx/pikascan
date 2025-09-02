@@ -47,7 +47,7 @@ namespace PikaScan.Servicios.pikaapi
                     string url = "";
                     if (index == 1)
                     {
-                        url = $"{_baseURL}/scanner/pagina?restart=true";
+                        url = $"{_baseURL}/scanner/pagina?restart=false";
                     }
                     else
                     {
