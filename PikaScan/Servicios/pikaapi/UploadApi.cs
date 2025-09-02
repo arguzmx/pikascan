@@ -54,6 +54,10 @@ namespace PikaScan.Servicios.pikaapi
                         url = $"{_baseURL}/scanner/pagina?restart=false";
                     }
 
+
+                    // AQui meter la verificacion con el nuevo endpoiunt 
+
+
                         using (payload)
                         using (var request = new HttpRequestMessage(HttpMethod.Post, url))
                         {
