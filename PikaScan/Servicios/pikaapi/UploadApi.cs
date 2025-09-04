@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ninject.Activation;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net.Http;
@@ -17,19 +18,14 @@ namespace PikaScan.Servicios.pikaapi
 
             _baseURL = string.IsNullOrEmpty(dto.UrlBase?.TrimEnd('/')) ? "http://localhost:5000/api/v1.0/upload" : dto.UrlBase?.TrimEnd('/');
 
-            var httpClient = new HttpClient
-            {
-                Timeout = Timeout.InfiniteTimeSpan
-            };
+            string transactionId = dto.VersionId.ToString();
 
-            string transactionId = Guid.NewGuid().ToString();
-
-            Form1.Instance.UpdateProgress(0, paginas.Count + 1);
+            Form1.Instance.UpdateProgress(0, paginas.Count);
             int index = 0;
             foreach (var pagina in paginas)
             {
                 index++;
-                Form1.Instance.UpdateProgress(index, paginas.Count + 1);
+                Form1.Instance.UpdateProgress(index, paginas.Count);
 
                 await Task.Delay(2000);
 
@@ -37,44 +33,43 @@ namespace PikaScan.Servicios.pikaapi
                     continue;
 
                 MultipartFormDataContent payload = null;
+                MultipartFormDataContent payloadVerificacion = null;
                 FileStream stream = null;
 
                 try
                 {
+
                     dto.Indice++;
-                    payload = ConvertirAPayload(pagina, dto, transactionId, out stream);
 
                     string url = "";
+                    string urlVerificacion = "";
+
                     if (index == 1)
                     {
                         url = $"{_baseURL}/scanner/pagina?restart=false";
+                        urlVerificacion = $"{_baseURL}/scanner/pagina/verificacion?restart=false";
                     }
                     else
                     {
                         url = $"{_baseURL}/scanner/pagina?restart=false";
+                        urlVerificacion = $"{_baseURL}/scanner/pagina/verificacion?restart=false";
                     }
 
+                    payloadVerificacion = ConvertirAPayloadVerificacion(pagina, dto, transactionId);
+                    var respuestaVerificacion = await EnviarPeticion(HttpMethod.Post, urlVerificacion, dto.Token, payloadVerificacion);
+                    if (!respuestaVerificacion.IsSuccessStatusCode)
+                        continue;
 
-                    // AQui meter la verificacion con el nuevo endpoiunt 
+                    payload = ConvertirAPayload(pagina, dto, transactionId, out stream);
+                    var respuesta = await EnviarPeticion(HttpMethod.Post, url, dto.Token, payload);
+                    if (respuesta.IsSuccessStatusCode)
+                    {
 
-
-                        using (payload)
-                        using (var request = new HttpRequestMessage(HttpMethod.Post, url))
-                        {
-                            request.Content = payload;
-                            request.Headers.Add("x-scanner-token", dto.Token);
-
-                            var response = await httpClient.SendAsync(request, HttpCompletionOption.ResponseHeadersRead);
-                            if (response.IsSuccessStatusCode)
-                            {
-
-                            }
-                            else
-                            {
-                                uploadCompleto = false;
-                            }
-
-                        }
+                    }
+                    else
+                    {
+                        uploadCompleto = false;
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -94,18 +89,14 @@ namespace PikaScan.Servicios.pikaapi
             {
                 try
                 {
-                    using (var completeRequest = new HttpRequestMessage(HttpMethod.Post, $"{_baseURL}/scanner/completar/{transactionId}"))
+                    var completeResponse = await EnviarPeticion(HttpMethod.Post, $"{_baseURL}/scanner/completar/{transactionId}", dto.Token, null);
+                    if (completeResponse.IsSuccessStatusCode)
                     {
-                        completeRequest.Headers.Add("x-scanner-token", dto.Token);
-                        var completeResponse = await httpClient.SendAsync(completeRequest, HttpCompletionOption.ResponseHeadersRead);
-                        if (completeResponse.IsSuccessStatusCode)
-                        {
 
-                        }
-                        else
-                        {
-                            uploadCompleto = false;
-                        }
+                    }
+                    else
+                    {
+                        uploadCompleto = false;
                     }
                 }
                 catch (Exception ex)
@@ -137,6 +128,38 @@ namespace PikaScan.Servicios.pikaapi
 
             return form;
         }
+
+        private MultipartFormDataContent ConvertirAPayloadVerificacion(PaginaPika pag, DTOTokenScanner dto, string transaccionId)
+        {
+            var form = new MultipartFormDataContent();
+            form.Add(new StringContent(Path.GetFileName(pag.Ruta)), "NombreOriginal");
+            form.Add(new StringContent(transaccionId), "TransaccionId");
+            form.Add(new StringContent(dto.VolumenId ?? ""), "VolumenId");
+            form.Add(new StringContent(dto.ElementoId ?? ""), "ElementoId");
+            form.Add(new StringContent(dto.PuntoMontajeId ?? ""), "PuntoMontajeId");
+            form.Add(new StringContent(dto.VersionId ?? ""), "VersionId");
+
+            return form;
+        }
+
+        private async Task<HttpResponseMessage> EnviarPeticion(HttpMethod method, string url, string token, HttpContent payload = null)
+        {
+            HttpClient httpClient = new HttpClient
+            {
+                Timeout = Timeout.InfiniteTimeSpan
+            };
+
+            using (var request = new HttpRequestMessage(method, url))
+            {
+                if (payload != null)
+                {
+                    request.Content = payload;
+                }
+                request.Headers.Add("x-scanner-token", token);
+                return await httpClient.SendAsync(request, HttpCompletionOption.ResponseHeadersRead);
+            }
+        }
+
 
     }
 }
