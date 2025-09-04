@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using Ninject;
+using System.Reflection;
 
 namespace PikaScan.Controles
 {
@@ -257,7 +258,7 @@ namespace PikaScan.Controles
             }
         }
 
-        private void PopulateListView(Documento doc)
+        public void PopulateListView(Documento doc)
         {
 
 
@@ -393,6 +394,32 @@ namespace PikaScan.Controles
         {
             //SetImages(ImLvThumbs.SelectedItems[0].Index);
             DisplayImages();
+        }
+
+        private void RaiseLastSelectedItem()
+        {
+            if (bntInsertMode.Checked)
+            {
+                if (ImLvThumbs.CheckedItems.Count > 0)
+                {
+                    Pagina pag = ImLvThumbs.CheckedItems[ImLvThumbs.CheckedItems.Count -1 ].Tag as Pagina;
+                    string last = string.Empty;
+                    if (Form1.documento.Paginas.Count > 0)
+                    {
+                        last = Form1.documento.Paginas.Last().Name;
+                    }
+                    Form1.Instance.SetInsertAfter(pag.Name, last);
+                }
+                else
+                {
+                    Form1.Instance.SetInsertAfter(string.Empty, string.Empty);
+                }
+
+            }
+            else
+            {
+                Form1.Instance.SetInsertAfter(string.Empty, string.Empty);
+            }
         }
 
         public void UncheckAllPAges()
@@ -600,5 +627,44 @@ namespace PikaScan.Controles
             //bo.Dispose();
         }
 
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            if (this.ImLvThumbs.CheckedItems.Count > 0)
+            {
+                var yes = MessageBox.Show("¿Desea eliminar los elemento seleccioandos de manera permanente?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                if (yes == DialogResult.No)
+                {
+                    return;
+                }
+
+                Form1.Instance.RemovePages(ImLvThumbs.CheckedItems.Select(x => x.FileName).ToList());
+                PopulateListView(Form1.documento);
+            } else
+            {
+
+            }
+        }
+
+        private void tsLevel_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            
+        }
+
+        private void bntInsertMode_Click(object sender, EventArgs e)
+        {
+            Form1.Instance.FlipTsLabelInsert(bntInsertMode.Checked);
+            RaiseLastSelectedItem();
+
+        }
+
+        private void ImLvThumbs_SelectionChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void ImLvThumbs_ItemCheckBoxClick(object sender, Manina.Windows.Forms.ItemEventArgs e)
+        {
+            RaiseLastSelectedItem();
+        }
     }
 }

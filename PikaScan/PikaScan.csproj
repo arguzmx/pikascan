@@ -262,6 +262,9 @@
     <None Include="Resources\bx-stop-circle-icon.png" />
     <None Include="Resources\bx-check-circle-icon.png" />
     <Content Include="Aniket-Suvarna-Box-Regular-Bx-aperture.ico" />
+    <None Include="Resources\chevron-down-icon.png" />
+    <None Include="Resources\chevron-double-down-icon.png" />
+    <None Include="Resources\chevron-double-down-icon1.png" />
     <Content Include="Wwalczyszyn-Android-Style-Honeycomb-Camera.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -129,8 +129,6 @@ namespace PikaScan.Servicios
 
                     pag = pageService.Add(pag);
 
-                    // documentService.AddPages(pag.DocId, 1);
-
                     OnPageAdded(pag, FileName, DevIndex, demoMode);
                 }
                 else

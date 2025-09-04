@@ -599,6 +599,10 @@ namespace PikaScan.Controles
 
             // this.BringToFront();
 
+            if(Form1.Instance.CheckPageInsert())
+            {
+
+            }
 
             OnImportEnded(new EventArgs());
             UIHelper.ShowNotification("Captura finalizada", ToolTipIcon.Info);

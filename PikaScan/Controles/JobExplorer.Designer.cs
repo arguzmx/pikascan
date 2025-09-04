@@ -33,14 +33,21 @@
             this.splitContainerExplorer = new System.Windows.Forms.SplitContainer();
             this.TvDocuments = new System.Windows.Forms.TreeView();
             this.ImlTvDocs = new System.Windows.Forms.ImageList(this.components);
-            this.ImLvThumbs = new Manina.Windows.Forms.ImageListView();
             this.panelInfo = new System.Windows.Forms.Panel();
             this.lblJobName = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.tsLevel = new System.Windows.Forms.ToolStrip();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.ImLvThumbs = new Manina.Windows.Forms.ImageListView();
+            this.btnDel = new System.Windows.Forms.ToolStripButton();
+            this.bntInsertMode = new System.Windows.Forms.ToolStripButton();
             this.pbInfo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerExplorer)).BeginInit();
             this.splitContainerExplorer.Panel1.SuspendLayout();
             this.splitContainerExplorer.SuspendLayout();
             this.panelInfo.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.tsLevel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbInfo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,21 +89,6 @@
             this.ImlTvDocs.TransparentColor = System.Drawing.Color.Transparent;
             this.ImlTvDocs.Images.SetKeyName(0, "book-icon.png");
             // 
-            // ImLvThumbs
-            // 
-            this.ImLvThumbs.CacheLimit = "500MB";
-            this.ImLvThumbs.DefaultImage = global::PikaScan.Properties.Resources.box_open_48;
-            this.ImLvThumbs.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ImLvThumbs.Location = new System.Drawing.Point(0, 0);
-            this.ImLvThumbs.Name = "ImLvThumbs";
-            this.ImLvThumbs.PersistentCacheDirectory = "";
-            this.ImLvThumbs.PersistentCacheSize = ((long)(100));
-            this.ImLvThumbs.ShowCheckBoxes = true;
-            this.ImLvThumbs.Size = new System.Drawing.Size(500, 600);
-            this.ImLvThumbs.TabIndex = 0;
-            this.ImLvThumbs.UseWIC = true;
-            this.ImLvThumbs.ItemClick += new Manina.Windows.Forms.ItemClickEventHandler(this.ImLvThumbs_ItemClick);
-            // 
             // panelInfo
             // 
             this.panelInfo.Controls.Add(this.lblJobName);
@@ -118,6 +110,79 @@
             this.lblJobName.TabIndex = 1;
             this.lblJobName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.tsLevel);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(500, 42);
+            this.panel1.TabIndex = 5;
+            // 
+            // tsLevel
+            // 
+            this.tsLevel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.tsLevel.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.tsLevel.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.tsLevel.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnDel,
+            this.toolStripSeparator1,
+            this.bntInsertMode});
+            this.tsLevel.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
+            this.tsLevel.Location = new System.Drawing.Point(0, 0);
+            this.tsLevel.Name = "tsLevel";
+            this.tsLevel.Size = new System.Drawing.Size(111, 42);
+            this.tsLevel.TabIndex = 5;
+            this.tsLevel.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.tsLevel_ItemClicked);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 23);
+            // 
+            // ImLvThumbs
+            // 
+            this.ImLvThumbs.CacheLimit = "0";
+            this.ImLvThumbs.CacheMode = Manina.Windows.Forms.CacheMode.Continuous;
+            this.ImLvThumbs.DefaultImage = global::PikaScan.Properties.Resources.box_open_48;
+            this.ImLvThumbs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ImLvThumbs.Location = new System.Drawing.Point(0, 42);
+            this.ImLvThumbs.Name = "ImLvThumbs";
+            this.ImLvThumbs.PersistentCacheDirectory = "";
+            this.ImLvThumbs.PersistentCacheSize = ((long)(0));
+            this.ImLvThumbs.ShowCheckBoxes = true;
+            this.ImLvThumbs.Size = new System.Drawing.Size(500, 558);
+            this.ImLvThumbs.TabIndex = 0;
+            this.ImLvThumbs.UseWIC = true;
+            this.ImLvThumbs.ItemClick += new Manina.Windows.Forms.ItemClickEventHandler(this.ImLvThumbs_ItemClick);
+            this.ImLvThumbs.ItemCheckBoxClick += new Manina.Windows.Forms.ItemCheckBoxClickEventHandler(this.ImLvThumbs_ItemCheckBoxClick);
+            this.ImLvThumbs.SelectionChanged += new System.EventHandler(this.ImLvThumbs_SelectionChanged);
+            // 
+            // btnDel
+            // 
+            this.btnDel.Image = global::PikaScan.Properties.Resources.minus_24;
+            this.btnDel.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(54, 39);
+            this.btnDel.Text = "Eliminar";
+            this.btnDel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnDel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnDel.ToolTipText = "Elimina las páginas marcadas.";
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
+            // 
+            // bntInsertMode
+            // 
+            this.bntInsertMode.CheckOnClick = true;
+            this.bntInsertMode.Image = global::PikaScan.Properties.Resources.chevron_double_down_icon;
+            this.bntInsertMode.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bntInsertMode.Name = "bntInsertMode";
+            this.bntInsertMode.Size = new System.Drawing.Size(50, 39);
+            this.bntInsertMode.Text = "Insertar";
+            this.bntInsertMode.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.bntInsertMode.ToolTipText = "Insertar las páginas en la posición en vez del al final.";
+            this.bntInsertMode.Click += new System.EventHandler(this.bntInsertMode_Click);
+            // 
             // pbInfo
             // 
             this.pbInfo.BackColor = System.Drawing.SystemColors.Control;
@@ -134,6 +199,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.ImLvThumbs);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.splitContainerExplorer);
             this.Controls.Add(this.panelInfo);
             this.Name = "JobExplorer";
@@ -143,6 +209,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerExplorer)).EndInit();
             this.splitContainerExplorer.ResumeLayout(false);
             this.panelInfo.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.tsLevel.ResumeLayout(false);
+            this.tsLevel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbInfo)).EndInit();
             this.ResumeLayout(false);
 
@@ -157,5 +227,10 @@
         private System.Windows.Forms.PictureBox pbInfo;
         private System.Windows.Forms.Label lblJobName;
         private System.Windows.Forms.ImageList ImlTvDocs;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ToolStrip tsLevel;
+        private System.Windows.Forms.ToolStripButton btnDel;
+        private System.Windows.Forms.ToolStripButton bntInsertMode;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }

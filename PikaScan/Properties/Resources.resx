@@ -124,9 +124,6 @@
   <data name="flip-vert-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\flip-vert-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="empty-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\empty-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="delete-icon-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\delete-icon-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -151,6 +148,9 @@
   <data name="batch-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\batch-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="status-inproc-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\status-inproc-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="shoot-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\shoot-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -159,9 +159,6 @@
   </data>
   <data name="Info-481" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Info-481.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sign_warning_icon_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sign-warning-icon-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Info-321" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Info-321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,8 +178,8 @@
   <data name="folder-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\folder-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bx-play-circle-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bx-play-circle-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cam-one-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cam-one-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="move-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\move-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -223,11 +220,8 @@
   <data name="search-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\search-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="folder-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\folder-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="new-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\new-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="one-column-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\one-column-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="box-empty-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\box-empty-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -249,6 +243,9 @@
   </data>
   <data name="open-lote-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\open-lote-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="open-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\open-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="cam-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cam-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -274,8 +271,8 @@
   <data name="Actions-undo-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Actions-undo-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="del-round-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\del-round-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Star-full-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Star-full-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Info-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Info-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -294,6 +291,12 @@
   </data>
   <data name="sign_delete_icon_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sign-delete-icon-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="del-round-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\del-round-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chevron-down-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chevron-down-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Information-bw-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Information-bw-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -331,8 +334,8 @@
   <data name="cam-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cam-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="zoom-fit-v-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\zoom-fit-v-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="box-icon-empty-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\box-icon-empty-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="folder-bw-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\folder-bw-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -358,12 +361,6 @@
   <data name="plug-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\plug-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="NN-Play-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\NN-Play-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Star-full-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Star-full-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Information-bw-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Information-bw-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -382,8 +379,11 @@
   <data name="folder-accept-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\folder-accept-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="plug-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\plug-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="warning-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warning-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bx-check-circle-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bx-check-circle-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="update-list-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\update-list-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -403,8 +403,8 @@
   <data name="thunder_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\thunder_48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="status-inproc-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\status-inproc-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="settings-icon-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\settings-icon-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="two-column-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\two-column-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -424,6 +424,9 @@
   <data name="check-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\check-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="brigt-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\brigt-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="box-icon-empty-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\box-icon-empty-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -441,9 +444,6 @@
   </data>
   <data name="folder-info-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\folder-info-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Setting-Folder-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Setting-Folder-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Semi-success-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Semi-success-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -463,11 +463,11 @@
   <data name="funnel-icon-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\funnel-icon-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="livewallpaper-config-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\livewallpaper-config-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="info-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\info-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="batch-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\batch-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="thumb-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\thumb-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -480,6 +480,9 @@
   </data>
   <data name="Trash-Full-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Trash-Full-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="plug-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\plug-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="config-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\config-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -504,6 +507,9 @@
   </data>
   <data name="box-closed-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\box-closed-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="revert-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\revert-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="prev-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\prev-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -535,6 +541,9 @@
   <data name="sign_warning_icon_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sign-warning-icon-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="status-inproc-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\status-inproc-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="box_out_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\box-out-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -550,6 +559,9 @@
   <data name="source-play-disabled-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\source-play-disabled-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="NN-Restart-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NN-Restart-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="zoom-minus-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\zoom-minus-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -562,8 +574,8 @@
   <data name="cam-two-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cam-two-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="NN-Play-128" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\NN-Play-128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="book-icon -48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\book-icon -48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="livewallpaper-config-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\livewallpaper-config-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -580,14 +592,8 @@
   <data name="Tick-Folder-i48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Tick-Folder-i48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="new-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\new-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="folder-info-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\folder-info-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="last-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\last-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="box_out_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\box-out-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -604,14 +610,14 @@
   <data name="net-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\net-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="NN-Pause-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\NN-Pause-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="scanner-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\scanner-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="first-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\first-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="thunder_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\thunder_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="sign_warning_icon_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sign-warning-icon-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="last-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\last-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -652,8 +658,8 @@
   <data name="revert-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\revert-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="plug-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\plug-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Setting-Folder-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Setting-Folder-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="setting-icon-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\setting-icon-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -667,8 +673,8 @@
   <data name="warning-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\warning-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="new-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\new-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="empty-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\empty-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="question-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\question-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -694,9 +700,6 @@
   <data name="error-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\error-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="one-column-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\one-column-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="move-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\move-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -705,6 +708,9 @@
   </data>
   <data name="warning-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\warning-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="system-users-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\system-users-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="cam-two-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cam-two-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -715,14 +721,14 @@
   <data name="search-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\search-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="folder-accept-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\folder-accept-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="thunder_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\thunder_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="box-full-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\box-full-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="open-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\open-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="expediente-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\expediente-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="document-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\document-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -787,8 +793,14 @@
   <data name="update-list-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\update-list-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="bx-play-circle-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bx-play-circle-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="folder-accept-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\folder-accept-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="folder-bw-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\folder-bw-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="first-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\first-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -796,8 +808,8 @@
   <data name="region-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\region-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="book-icon -48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\book-icon -48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="open-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\open-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="question-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\question-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -811,8 +823,8 @@
   <data name="net-641" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\net-641.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="batch-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\batch-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="box_out_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\box-out-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="cam-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cam-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -823,8 +835,8 @@
   <data name="Star-full-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Star-full-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="box_out_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\box-out-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="What-Folder-i64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\What-Folder-i64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="folder-info-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\folder-info-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -838,11 +850,11 @@
   <data name="contrast-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\contrast-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="chevron-double-down-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chevron-double-down-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="zoom-eq-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\zoom-eq-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="settings-icon-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\settings-icon-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bx-stop-circle-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bx-stop-circle-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -853,11 +865,11 @@
   <data name="quit-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\quit-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="NN-Play-128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NN-Play-128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="settings-icon-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\settings-icon-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="minus-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\minus-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Stop-Pressed-Blue-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Stop-Pressed-Blue-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -880,9 +892,6 @@
   <data name="book-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\book-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cam-one-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cam-one-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="info-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\info-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -898,11 +907,8 @@
   <data name="tick-icon-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tick-icon-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="What-Folder-i32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\What-Folder-i32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="expediente-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\expediente-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="minus-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minus-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="del-round-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\del-round-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -915,6 +921,9 @@
   </data>
   <data name="two-column-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\two-column-321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="source-play-disabled-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\source-play-disabled-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="box-full-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\box-full-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -934,9 +943,6 @@
   <data name="one-column-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\one-column-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="warning-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\warning-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="question-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\question-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -949,11 +955,11 @@
   <data name="source-play-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\source-play-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="scanner-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\scanner-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="livewallpaper-config-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\livewallpaper-config-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="system-users-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\system-users-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="new-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\new-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="open-lote-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\open-lote-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -979,8 +985,8 @@
   <data name="Semi-success-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Semi-success-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="setting-icon-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\setting-icon-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="new-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\new-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="funnel-icon-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\funnel-icon-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -991,14 +997,17 @@
   <data name="sign_check_icon_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sign-check-icon-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="setting-icon-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\setting-icon-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="folder-bw-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\folder-bw-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="source-play-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\source-play-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="last-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\last-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="plug-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\plug-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Setting-Folder-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Setting-Folder-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -1033,6 +1042,9 @@
   <data name="expediente-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\expediente-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="process-accept-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\process-accept-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Control-Panel-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Control-Panel-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -1048,14 +1060,11 @@
   <data name="revert-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\revert-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="source-play-disabled-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\source-play-disabled-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="What-Folder-i32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\What-Folder-i32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="first-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\first-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="next-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\next-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="drive-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\drive-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -1069,8 +1078,8 @@
   <data name="zoom-fit-h-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\zoom-fit-h-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="folder-bw-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\folder-bw-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="new-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\new-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="sync-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sync-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -1081,8 +1090,8 @@
   <data name="NN-Shutdown-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NN-Shutdown-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="What-Folder-i64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\What-Folder-i64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="settings-icon-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\settings-icon-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="box-icon-empty-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\box-icon-empty-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -1096,8 +1105,8 @@
   <data name="contrast-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\contrast-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="open-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\open-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="NN-Pause-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NN-Pause-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="book-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\book-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -1108,11 +1117,8 @@
   <data name="book-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\book-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="process-accept-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\process-accept-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="settings-icon-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\settings-icon-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="last-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\last-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Empty-Folder-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Empty-Folder-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -1120,14 +1126,14 @@
   <data name="transform-rotate-180-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\transform-rotate-180-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="revert-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\revert-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="zoom-fit-v-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\zoom-fit-v-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="empty-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\empty-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="box-icon-empty-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\box-icon-empty-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="folder-accept-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\folder-accept-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="check-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\check-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -1135,8 +1141,8 @@
   <data name="cam-one-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cam-one-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="status-inproc-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\status-inproc-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="next-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\next-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="process-accept-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\process-accept-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -1156,6 +1162,9 @@
   <data name="livewallpaper-config-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\livewallpaper-config-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="folder-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\folder-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Star-half-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Star-half-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -1165,8 +1174,8 @@
   <data name="check-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\check-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="NN-Restart-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\NN-Restart-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="NN-Play-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NN-Play-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Play-Disabled-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Play-Disabled-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -1189,8 +1198,8 @@
   <data name="What-Folder-i48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\What-Folder-i48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="brigt-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\brigt-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="last-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\last-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="del-lote-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\del-lote-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -1201,7 +1210,7 @@
   <data name="zoom-eq-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\zoom-eq-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bx-check-circle-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bx-check-circle-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="chevron-double-down-icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chevron-double-down-icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

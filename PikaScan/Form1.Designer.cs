@@ -37,6 +37,7 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.jobExplorer1 = new PikaScan.Controles.JobExplorer();
             this.documentViewer1 = new PikaScan.Controles.DocumentViewer();
+            this.tsLabelInsert = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -71,6 +72,7 @@
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsLabelInsert,
             this.tsLAbel,
             this.tsProgressSend});
             this.statusStrip1.Location = new System.Drawing.Point(0, 577);
@@ -118,6 +120,7 @@
             this.jobExplorer1.Name = "jobExplorer1";
             this.jobExplorer1.Size = new System.Drawing.Size(125, 471);
             this.jobExplorer1.TabIndex = 5;
+            this.jobExplorer1.Load += new System.EventHandler(this.jobExplorer1_Load);
             // 
             // documentViewer1
             // 
@@ -131,6 +134,14 @@
             this.documentViewer1.Size = new System.Drawing.Size(1015, 471);
             this.documentViewer1.TabIndex = 0;
             this.documentViewer1.Load += new System.EventHandler(this.documentViewer1_Load);
+            // 
+            // tsLabelInsert
+            // 
+            this.tsLabelInsert.Image = global::PikaScan.Properties.Resources.chevron_double_down_icon;
+            this.tsLabelInsert.Name = "tsLabelInsert";
+            this.tsLabelInsert.Size = new System.Drawing.Size(97, 17);
+            this.tsLabelInsert.Text = "Modo Insertar";
+            this.tsLabelInsert.Visible = false;
             // 
             // Form1
             // 
@@ -167,6 +178,7 @@
         private System.Windows.Forms.ToolStripProgressBar tsProgressSend;
         private Controles.JobExplorer jobExplorer1;
         private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.ToolStripStatusLabel tsLabelInsert;
     }
 }
 
