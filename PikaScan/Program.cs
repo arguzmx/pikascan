@@ -27,7 +27,7 @@ namespace PikaScan
             }
             _mainForm = new Form1(deeplink);
             if(_mainForm!=null)
-            Application.Run(_mainForm);
+             Application.Run(_mainForm);
         }
     }
 }
