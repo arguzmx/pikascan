@@ -123,8 +123,8 @@ namespace PikaScan.Servicios.pikaapi
             form.Add(new StringContent(dto.PuntoMontajeId ?? ""), "PuntoMontajeId");
             form.Add(new StringContent(dto.VersionId ?? ""), "VersionId");
             form.Add(new StringContent(dto.Indice.ToString() ?? ""), "Indice");
-            form.Add(new StringContent(PosicionCarga.al_final.ToString()), "Posicion");
-            form.Add(new StringContent("0"), "PosicionInicio");
+            form.Add(new StringContent(dto.Posicion.ToString() ?? ""), "Posicion");
+            form.Add(new StringContent(dto.PosicionInicio.ToString() ?? ""), "PosicionInicio");
 
             return form;
         }
