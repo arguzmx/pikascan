@@ -645,6 +645,12 @@ namespace PikaScan.Controles
             }
         }
 
+        public void EliminaArchivosEnviados()
+        {
+            Form1.Instance.RemovePages(ImLvThumbs.Items.Select(x => x.FileName).ToList());
+            PopulateListView(Form1.documento);
+        }
+
         private void tsLevel_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
             

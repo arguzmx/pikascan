@@ -93,6 +93,7 @@ namespace PikaScan.Servicios.pikaapi
                     {
                         Form1.Instance.tsProgressSend.Visible = false;
                         Form1.Instance.tsLAbel.Text = "Envío finalizado";
+                        Form1.Instance.eliminaPagina();
                     }
                     else
                     {
