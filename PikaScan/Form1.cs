@@ -22,9 +22,9 @@ namespace PikaScan
         {
             InitializeComponent();
             Instance = this;
-#if DEBUG
-            deeplink = "%7B%22Id%22%3A8%2C%22Token%22%3A%2206e5ac7a63ae4766af771c656ea2a765%22%2C%22ElementoId%22%3A%22daaec56f-9925-41f1-b4ea-9199d18121ef%22%2C%22VersionId%22%3A%22daaec56f-9925-41f1-b4ea-9199d18121ef%22%2C%22Caducidad%22%3A%222025-09-02T16%3A07%3A18.3393968-06%3A00%22%2C%22PuntoMontajeId%22%3A%229ca3c559-9060-40a7-89c0-0dee976f1444%22%2C%22VolumenId%22%3A%22cd80cd33-33ea-40be-b997-c152d6ea1aad%22%2C%22NombreDocumento%22%3A%22CCC%22%2C%22UrlBase%22%3A%22http%3A%2F%2Flocalhost%3A5000%2Fapi%2Fv1.0%2Fupload%22%7D";
-#endif
+//#if DEBUG
+//            deeplink = "%7B%22Id%22%3A116%2C%22Token%22%3A%22138c3fb7c08f4400bd223350a87355ec%22%2C%22ElementoId%22%3A%22acb03740-9b98-4e58-8676-892c9d6485aa%22%2C%22VersionId%22%3A%22acb03740-9b98-4e58-8676-892c9d6485aa%22%2C%22Caducidad%22%3A%222025-09-17T19%3A37%3A51.2348281-06%3A00%22%2C%22PuntoMontajeId%22%3A%22721ce723-e78b-466a-830b-2201ac050fff%22%2C%22VolumenId%22%3A%227525081c-6713-43d1-966a-87d68b722bfb%22%2C%22NombreDocumento%22%3A%22Elemento%22%2C%22UrlBase%22%3A%22http%3A%2F%2Flocalhost%3A5000%2Fapi%2Fv1.0%2Fupload%22%2C%22Posicion%22%3A2%2C%22PosicionInicio%22%3A19%7D";
+//#endif
             if (deeplink != null) {
                 scanner = ObtenerDatosDeeplink(deeplink);
                 if (scanner == null)
@@ -140,7 +140,7 @@ namespace PikaScan
                 {
                     Instance.tsProgressSend.Visible = false;
                     Instance.tsProgressSend.Value = 0;
-                    Instance.tsLAbel.Text = "Enviío finalizado";
+                    Instance.tsLAbel.Text = "";
                 }
                 else
                 {
