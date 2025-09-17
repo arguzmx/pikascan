@@ -18,7 +18,9 @@ namespace PikaScan.Controles
 
         public bool AllowAquire { get; set; }
         public event EventHandler ImportEnded;
-   
+        private bool IsTwainOpened = false;
+        private string CurrentTwainSource = "";
+
         protected virtual void OnImportEnded(EventArgs e)
         {
             EventHandler handler = ImportEnded;
@@ -30,7 +32,6 @@ namespace PikaScan.Controles
         public const string GDILIC = "411897669724499821116142492193218";
         private GdPicture.GdPictureImaging g;
         private string currentSource = "";
-        private bool InSession = false;
         private bool LoadingScanners = false;
         private TWAINController controller = null;
         private bool capturando = false;
@@ -53,14 +54,6 @@ namespace PikaScan.Controles
             controller = new TWAINController(ds, pageService, aset);
         }
 
-        public void ReleaseModule()
-        {
-            if (InSession)
-            {
-                g.TwainCloseSource();
-                InSession = false;
-            }
-        }
 
         public void AjustaBotonera()
         {
@@ -417,25 +410,49 @@ namespace PikaScan.Controles
             this.cmbFormat.DataSource = lformat;
         }
 
+
+        private bool OpenSource()
+        {
+            if(cmbScanners.Items.Count > 0 && cmbScanners.SelectedItem != null)
+            {
+                IsTwainOpened = g.TwainOpenSource(h, (cmbScanners.SelectedItem as ParCombo).Display);
+                if(IsTwainOpened)
+                {
+                    CurrentTwainSource = (cmbScanners.SelectedItem as ParCombo).Display;
+                }
+            }
+            return IsTwainOpened;   
+        }
+
+        private void CloseSource()
+        {
+            if (IsTwainOpened)
+            {
+                CurrentTwainSource = string.Empty;
+                g.TwainDisableSource();
+                g.TwainCloseSource();
+                IsTwainOpened = false;
+            }
+        }
+
         private void GetSourceConfig(string id)
         {
             try
             {
                 ClearConfig();
 
-                if (InSession)
+                if (IsTwainOpened)
                 {
-                    g.TwainCloseSource();
-                    InSession = false;
+                    CloseSource();
                 }
 
 
-                if (g.TwainOpenSource(h, id))
+                if (OpenSource())
                 {
                     this.GetAutoOrientation();
                     this.GetResolutions();
                     this.GetDuplexing();
-                    InSession = true;
+                    CloseSource();
                     UIHelper.ShowNotification($"Conectado al scanner {id}", ToolTipIcon.Info);
                 }
                 else
@@ -487,6 +504,16 @@ namespace PikaScan.Controles
 
         private void cmbRes_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if(!IsTwainOpened)
+            {
+                var resut = OpenSource();
+                if(!resut)
+                {
+                    UIHelper.ShowNotification("No se pudo abrir el scanner", ToolTipIcon.Warning);
+                    return;
+                }
+            }
+
             if (cmbRes.SelectedIndex >= 0)
             {
                 ParCombo p = cmbRes.SelectedItem as ParCombo;
@@ -497,6 +524,16 @@ namespace PikaScan.Controles
 
         private void cmbPixelType_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (!IsTwainOpened)
+            {
+                var resut = OpenSource();
+                if (!resut)
+                {
+                    UIHelper.ShowNotification("No se pudo abrir el scanner", ToolTipIcon.Warning);
+                    return;
+                }
+            }
+
             if (cmbPixelType.SelectedIndex >= 0)
             {
                 ParCombo p = cmbPixelType.SelectedItem as ParCombo;
@@ -507,6 +544,15 @@ namespace PikaScan.Controles
 
         private void cmbFormat_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (!IsTwainOpened)
+            {
+                var resut = OpenSource();
+                if (!resut)
+                {
+                    UIHelper.ShowNotification("No se pudo abrir el scanner", ToolTipIcon.Warning);
+                    return;
+                }
+            }
             if (cmbFormat.SelectedIndex >= 0)
             {
                 ParCombo p = cmbFormat.SelectedItem as ParCombo;
@@ -535,7 +581,6 @@ namespace PikaScan.Controles
             foreach (string e1 in r.Errors)
             {
                 err += e1 + "\r\n";
-                Debug.Print($"Err ---------> {e1}");
             }
 
             if (err != "")
@@ -566,9 +611,9 @@ namespace PikaScan.Controles
             UIHelper.ShowNotification("Iniciando captura", ToolTipIcon.Info);
             capturando = true;
             AjustaBotonera();
-            if (InSession)
+            if (IsTwainOpened)
             {
-                g.TwainCloseSource();
+                CloseSource();
             }
 
             var config = GetConfigFrom();
@@ -707,6 +752,11 @@ namespace PikaScan.Controles
             {
                 
             }
+        }
+
+        private void cmbCompres_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

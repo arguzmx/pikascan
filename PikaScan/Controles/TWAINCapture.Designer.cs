@@ -140,6 +140,7 @@
             this.cmbCompres.Name = "cmbCompres";
             this.cmbCompres.Size = new System.Drawing.Size(100, 21);
             this.cmbCompres.TabIndex = 20;
+            this.cmbCompres.SelectedIndexChanged += new System.EventHandler(this.cmbCompres_SelectedIndexChanged);
             // 
             // label4
             // 

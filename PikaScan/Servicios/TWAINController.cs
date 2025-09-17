@@ -55,12 +55,27 @@ namespace PikaScan.Servicios
 
             g.TwainLogStart(Path.Combine( appSettings.AppPath, "twainlog.txt"));
 
+
+            
             if (!g.TwainOpenSource(handle, config.Source))
             {
                 r.DoneOK = false;
                 r.Errors.Add($"No pudo conetarse con {config.Source}");
                 return r;
             }
+
+            g.TwainSetPixelType(config.PixelType);
+            g.TwainSetResolution(config.Resolution);
+            if(config.Duplex) {
+                g.TwainEnableDuplex(true);
+            }
+            else
+            {
+                g.TwainEnableDuplex(true);
+            };
+
+            g.TwainSetCompression(config.Compression);
+            g.TwainSetImageFileFormat(config.ImageFormat);  
 
             //if (config.AutoOrientation)
             //{
@@ -151,7 +166,9 @@ namespace PikaScan.Servicios
                 }
                 int ImageID = g.TwainAcquireToGdPictureImage(handle);
                 var x = g.TwainGetState();
-                
+                var bd = g.GetBitDepth(ImageID); 
+                g.SaveAsBMP(ImageID, FileName + ".bmp");
+
                 if (ImageID > 0)
                 {
                     switch (Extesion)
@@ -186,8 +203,9 @@ namespace PikaScan.Servicios
 
             } while (g.TwainGetState() > TwainStatus.TWAIN_SOURCE_ENABLED);
 
+            g.TwainDisableSource();
             g.TwainCloseSource();
-
+            
             return r;
         }
 
