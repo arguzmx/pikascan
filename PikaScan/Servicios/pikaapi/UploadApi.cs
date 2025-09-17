@@ -20,13 +20,11 @@ namespace PikaScan.Servicios.pikaapi
 
             string transactionId = dto.VersionId.ToString();
 
-            Form1.Instance.UpdateProgress(0, paginas.Count);
             int index = 0;
+
+            Form1.Instance.UpdateProgress(index, paginas.Count);
             foreach (var pagina in paginas)
             {
-                index++;
-                Form1.Instance.UpdateProgress(index, paginas.Count);
-
                 await Task.Delay(2000);
 
                 if (!File.Exists(pagina.Ruta))
@@ -64,7 +62,8 @@ namespace PikaScan.Servicios.pikaapi
                     var respuesta = await EnviarPeticion(HttpMethod.Post, url, dto.Token, payload);
                     if (respuesta.IsSuccessStatusCode)
                     {
-
+                        index++;
+                        Form1.Instance.UpdateProgress(index, paginas.Count);
                     }
                     else
                     {
@@ -92,7 +91,8 @@ namespace PikaScan.Servicios.pikaapi
                     var completeResponse = await EnviarPeticion(HttpMethod.Post, $"{_baseURL}/scanner/completar/{transactionId}", dto.Token, null);
                     if (completeResponse.IsSuccessStatusCode)
                     {
-
+                        Form1.Instance.tsProgressSend.Visible = false;
+                        Form1.Instance.tsLAbel.Text = "Envío finalizado";
                     }
                     else
                     {

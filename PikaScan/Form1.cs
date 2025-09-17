@@ -140,7 +140,7 @@ namespace PikaScan
                 {
                     Instance.tsProgressSend.Visible = false;
                     Instance.tsProgressSend.Value = 0;
-                    Instance.tsLAbel.Text = "Enviío finalizado";
+                    Instance.tsLAbel.Text = "";
                 }
                 else
                 {

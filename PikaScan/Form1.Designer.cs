@@ -30,14 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.twainCapture1 = new PikaScan.Controles.TWAINCapture();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.tsLabelInsert = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsLAbel = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsProgressSend = new System.Windows.Forms.ToolStripProgressBar();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.jobExplorer1 = new PikaScan.Controles.JobExplorer();
             this.documentViewer1 = new PikaScan.Controles.DocumentViewer();
-            this.tsLabelInsert = new System.Windows.Forms.ToolStripStatusLabel();
+            this.twainCapture1 = new PikaScan.Controles.TWAINCapture();
             this.groupBox1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -56,19 +56,6 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             // 
-            // twainCapture1
-            // 
-            this.twainCapture1.AllowAquire = false;
-            this.twainCapture1.DocumentId = null;
-            this.twainCapture1.documentViewer = null;
-            this.twainCapture1.jobExplorer = null;
-            this.twainCapture1.Location = new System.Drawing.Point(6, 11);
-            this.twainCapture1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.twainCapture1.Name = "twainCapture1";
-            this.twainCapture1.Size = new System.Drawing.Size(800, 90);
-            this.twainCapture1.TabIndex = 1;
-            this.twainCapture1.Load += new System.EventHandler(this.twainCapture1_Load);
-            // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -80,6 +67,14 @@
             this.statusStrip1.Size = new System.Drawing.Size(1144, 22);
             this.statusStrip1.TabIndex = 4;
             this.statusStrip1.Text = "statusStrip1";
+            // 
+            // tsLabelInsert
+            // 
+            this.tsLabelInsert.Image = global::PikaScan.Properties.Resources.chevron_double_down_icon;
+            this.tsLabelInsert.Name = "tsLabelInsert";
+            this.tsLabelInsert.Size = new System.Drawing.Size(97, 17);
+            this.tsLabelInsert.Text = "Modo Insertar";
+            this.tsLabelInsert.Visible = false;
             // 
             // tsLAbel
             // 
@@ -135,13 +130,18 @@
             this.documentViewer1.TabIndex = 0;
             this.documentViewer1.Load += new System.EventHandler(this.documentViewer1_Load);
             // 
-            // tsLabelInsert
+            // twainCapture1
             // 
-            this.tsLabelInsert.Image = global::PikaScan.Properties.Resources.chevron_double_down_icon;
-            this.tsLabelInsert.Name = "tsLabelInsert";
-            this.tsLabelInsert.Size = new System.Drawing.Size(97, 17);
-            this.tsLabelInsert.Text = "Modo Insertar";
-            this.tsLabelInsert.Visible = false;
+            this.twainCapture1.AllowAquire = false;
+            this.twainCapture1.DocumentId = null;
+            this.twainCapture1.documentViewer = null;
+            this.twainCapture1.jobExplorer = null;
+            this.twainCapture1.Location = new System.Drawing.Point(6, 11);
+            this.twainCapture1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.twainCapture1.Name = "twainCapture1";
+            this.twainCapture1.Size = new System.Drawing.Size(800, 90);
+            this.twainCapture1.TabIndex = 1;
+            this.twainCapture1.Load += new System.EventHandler(this.twainCapture1_Load);
             // 
             // Form1
             // 
@@ -174,11 +174,11 @@
         private Controles.DocumentViewer documentViewer1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel tsLAbel;
-        private System.Windows.Forms.ToolStripProgressBar tsProgressSend;
         private Controles.JobExplorer jobExplorer1;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.ToolStripStatusLabel tsLabelInsert;
+        public System.Windows.Forms.ToolStripStatusLabel tsLAbel;
+        public System.Windows.Forms.ToolStripProgressBar tsProgressSend;
     }
 }
 
