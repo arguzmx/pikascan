@@ -25,8 +25,7 @@ namespace PikaScan.Servicios.pikaapi
             Form1.Instance.UpdateProgress(index, paginas.Count);
             foreach (var pagina in paginas)
             {
-                await Task.Delay(2000);
-
+                
                 if (!File.Exists(pagina.Ruta))
                     continue;
 
