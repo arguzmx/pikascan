@@ -22,16 +22,18 @@ namespace PikaScan
         {
             InitializeComponent();
             Instance = this;
-//#if DEBUG
-//            deeplink = "%7B%22Id%22%3A8%2C%22Token%22%3A%2206e5ac7a63ae4766af771c656ea2a765%22%2C%22ElementoId%22%3A%22daaec56f-9925-41f1-b4ea-9199d18121ef%22%2C%22VersionId%22%3A%22daaec56f-9925-41f1-b4ea-9199d18121ef%22%2C%22Caducidad%22%3A%222025-09-02T16%3A07%3A18.3393968-06%3A00%22%2C%22PuntoMontajeId%22%3A%229ca3c559-9060-40a7-89c0-0dee976f1444%22%2C%22VolumenId%22%3A%22cd80cd33-33ea-40be-b997-c152d6ea1aad%22%2C%22NombreDocumento%22%3A%22CCC%22%2C%22UrlBase%22%3A%22http%3A%2F%2Flocalhost%3A5000%2Fapi%2Fv1.0%2Fupload%22%7D";
-//#endif
-            if (deeplink != null) {
+#if DEBUG
+            deeplink = "%7B%22Id%22%3A130%2C%22Token%22%3A%226b20e543a6d64c24a32c1e38846f2522%22%2C%22ElementoId%22%3A%222108b7fc-ae4b-47d1-ad5a-fbaeaae9d455%22%2C%22VersionId%22%3A%222108b7fc-ae4b-47d1-ad5a-fbaeaae9d455%22%2C%22Caducidad%22%3A%222025-09-18T11%3A30%3A32.4161876-06%3A00%22%2C%22PuntoMontajeId%22%3A%22721ce723-e78b-466a-830b-2201ac050fff%22%2C%22VolumenId%22%3A%227525081c-6713-43d1-966a-87d68b722bfb%22%2C%22NombreDocumento%22%3A%22Elemento1%22%2C%22UrlBase%22%3A%22http%3A%2F%2Flocalhost%3A5000%2Fapi%2Fv1.0%2Fupload%22%2C%22Posicion%22%3A1%2C%22PosicionInicio%22%3A0%7D";
+#endif
+            if (deeplink != null)
+            {
                 scanner = ObtenerDatosDeeplink(deeplink);
                 if (scanner == null)
                 {
                     MessageBox.Show("El enlace no es valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     this.Close();
-                } else
+                }
+                else
                 {
                     this.Text = $"PikaScan - {scanner.NombreDocumento}";
                     this.twainCapture1.jobExplorer = this.jobExplorer1;
@@ -39,9 +41,9 @@ namespace PikaScan
 
                     scanPAth = Path.Combine(Application.StartupPath, "scan", scanner.ElementoId);
                     docPath = Path.Combine(Application.StartupPath, "scan", scanner.ElementoId, "doc.json");
-                    if (Directory.Exists(scanPAth) && File.Exists(docPath) )
+                    if (Directory.Exists(scanPAth) && File.Exists(docPath))
                     {
-                        documento = Newtonsoft.Json.JsonConvert.DeserializeObject<Documento>(File.ReadAllText(docPath));    
+                        documento = Newtonsoft.Json.JsonConvert.DeserializeObject<Documento>(File.ReadAllText(docPath));
                     }
                     else
                     {
@@ -87,10 +89,10 @@ namespace PikaScan
             try
             {
 
-               string data = Uri.UnescapeDataString(deeplink);
+                string data = Uri.UnescapeDataString(deeplink);
 
                 DTOTokenScanner token = Newtonsoft.Json.JsonConvert.DeserializeObject<DTOTokenScanner>(data);
- 
+
 
                 return token;
             }
@@ -140,7 +142,7 @@ namespace PikaScan
                 {
                     Instance.tsProgressSend.Visible = false;
                     Instance.tsProgressSend.Value = 0;
-                    Instance.tsLAbel.Text = "Enviío finalizado";
+                    Instance.tsLAbel.Text = "";
                 }
                 else
                 {
@@ -152,17 +154,18 @@ namespace PikaScan
                 }
                 Application.DoEvents();
             }
-        } 
-        
-        public void RemovePages(List<string> paths )
+        }
+
+        public void RemovePages(List<string> paths)
         {
             this.documentViewer1.ClearPorts();
             var temp = Newtonsoft.Json.JsonConvert.DeserializeObject<Documento>(File.ReadAllText(docPath));
-            foreach (string path in paths) { 
-                    FileInfo fi = new FileInfo(path);
+            foreach (string path in paths)
+            {
+                FileInfo fi = new FileInfo(path);
 
                 var p = temp.Paginas.FirstOrDefault(x => x.Name.Equals(fi.Name, StringComparison.InvariantCultureIgnoreCase));
-                if(p != null)
+                if (p != null)
                 {
                     try
                     {
@@ -182,7 +185,7 @@ namespace PikaScan
 
         private Documento ResavePages(Documento documento)
         {
-            foreach(var p in documento.Paginas.OrderBy(x=>x.Index))
+            foreach (var p in documento.Paginas.OrderBy(x => x.Index))
             {
                 string source = Path.Combine(documento.Path, p.Name);
                 string dest = Path.Combine(documento.Path, "temp-" + p.Name);
@@ -200,7 +203,7 @@ namespace PikaScan
                 index++;
             }
 
-            return documento;   
+            return documento;
         }
 
         public void FlipTsLabelInsert(bool visible)
@@ -219,7 +222,7 @@ namespace PikaScan
             if (!string.IsNullOrEmpty(InsertAfter))
             {
                 this.documentViewer1.ClearPorts();
-                
+
                 Pagina last = documento.Paginas.FirstOrDefault(p => p.Name == LastPageItem);
                 List<Pagina> adicionales = new List<Pagina>();
 
@@ -227,18 +230,19 @@ namespace PikaScan
                 {
                     string source = Path.Combine(documento.Path, p.Name);
                     string dest = Path.Combine(documento.Path, "temp-" + p.Name);
-                    File.Move (source, dest);    
+                    File.Move(source, dest);
                 }
 
                 bool latch = false;
-                foreach(var p in documento.Paginas) 
+                foreach (var p in documento.Paginas)
                 {
                     if (latch)
                     {
                         adicionales.Add(p);
                     }
 
-                    if (p.Name == LastPageItem) { 
+                    if (p.Name == LastPageItem)
+                    {
                         latch = true;
                     }
 
@@ -273,7 +277,7 @@ namespace PikaScan
                 documento.Paginas = tempP;
                 File.Delete(docPath);
                 File.WriteAllText(docPath, Newtonsoft.Json.JsonConvert.SerializeObject(documento));
-                this.jobExplorer1.PopulateListView(documento);  
+                this.jobExplorer1.PopulateListView(documento);
                 return true;
             }
 
@@ -283,6 +287,11 @@ namespace PikaScan
         private void jobExplorer1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        public void eliminaPagina()
+        {
+            this.jobExplorer1.EliminaArchivosEnviados();
         }
     }
 }
