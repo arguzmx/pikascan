@@ -2,6 +2,7 @@
 using PikaScan.Modelo;
 using System;
 using System.IO;
+using System.Windows.Forms;
 
 namespace PikaScan.Servicios
 {
@@ -112,7 +113,6 @@ namespace PikaScan.Servicios
                     pag.Size = (int)fi.Length;
                     
                     string FileName = Path.Combine(d.Path, pag.GetNameFromIndex());
-
 
                     File.Copy(fi.FullName, FileName, true);
                     if (Rotation != 0) {

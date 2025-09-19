@@ -38,7 +38,7 @@ namespace PikaScan.Servicios
         //documento = new Documento()
         //{
         //    CantidadPaginas = 0, Nombre = scanner.NombreDocumento, Id = scanner.ElementoId, Paginas = new List<Pagina>(), 
-        //                Path = Path.Combine(Application.StartupPath, "scan", scanner.ElementoId) };
+        //                Path = Path.Combine(Path.GetTempPath(), "scan", scanner.ElementoId) };
         //            if (!Directory.Exists(documento.Path))
         //            {
         //                Directory.CreateDirectory(documento.Path);

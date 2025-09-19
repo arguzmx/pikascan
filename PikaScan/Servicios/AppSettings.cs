@@ -12,7 +12,7 @@ namespace PikaScan.Servicios
             assemblyPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
         }
 
-        public string AppPath { get => assemblyPath; }
+        public string AppPath { get => Path.GetTempPath(); }
         public string APIUrl { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public string JobPath { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public string LastCameraId { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }

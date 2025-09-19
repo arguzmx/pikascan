@@ -18,29 +18,44 @@ namespace PikaScan
         private string scanPAth;
         private string docPath;
 
+        public static void Log(string info)
+        {
+            string logPath = Path.Combine(Path.GetTempPath(), "log.txt");
+            try
+            {
+                File.AppendAllText(logPath, $"{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}\t{info}{Environment.NewLine}");
+            }
+            catch (Exception)
+            {
+            }
+        }
+
         public Form1(string deeplink)
         {
             InitializeComponent();
             Instance = this;
-#if DEBUG
-            deeplink = "%7B%22Id%22%3A14%2C%22Token%22%3A%229d44423d85d24ea69bd63e41362b3417%22%2C%22ElementoId%22%3A%2269f397d1-d456-4afa-948d-a41eeaa66592%22%2C%22VersionId%22%3A%2269f397d1-d456-4afa-948d-a41eeaa66592%22%2C%22Caducidad%22%3A%222025-09-18T21%3A15%3A55.5226368-06%3A00%22%2C%22PuntoMontajeId%22%3A%229ca3c559-9060-40a7-89c0-0dee976f1444%22%2C%22VolumenId%22%3A%22cd80cd33-33ea-40be-b997-c152d6ea1aad%22%2C%22NombreDocumento%22%3A%22_A1%22%2C%22UrlBase%22%3A%22http%3A%2F%2Flocalhost%3A5000%2Fapi%2Fv1.0%2Fupload%22%2C%22Posicion%22%3A2%2C%22PosicionInicio%22%3A2%7D";
-#endif
+//#if DEBUG
+//            deeplink = "%7B%22Id%22%3A18%2C%22Token%22%3A%2277cf713bd8d94d36a3a575d5bf2c2d9d%22%2C%22ElementoId%22%3A%22888da889-9904-4a43-9c37-6cd4694891ff%22%2C%22VersionId%22%3A%22888da889-9904-4a43-9c37-6cd4694891ff%22%2C%22Caducidad%22%3A%222025-09-19T19%3A11%3A41.2988938-06%3A00%22%2C%22PuntoMontajeId%22%3A%229ca3c559-9060-40a7-89c0-0dee976f1444%22%2C%22VolumenId%22%3A%22cd80cd33-33ea-40be-b997-c152d6ea1aad%22%2C%22NombreDocumento%22%3A%22_A2%22%2C%22UrlBase%22%3A%22http%3A%2F%2Flocalhost%3A5000%2Fapi%2Fv1.0%2Fupload%22%2C%22Posicion%22%3A1%2C%22PosicionInicio%22%3A0%7D";
+//#endif
             if (deeplink != null)
             {
                 scanner = ObtenerDatosDeeplink(deeplink);
                 if (scanner == null)
                 {
+                    Log("El enlace no es valido");
                     MessageBox.Show("El enlace no es valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     this.Close();
                 }
                 else
                 {
+                    Log("Deeplink recibido");
+                    Log(deeplink);
                     this.Text = $"PikaScan - {scanner.NombreDocumento}";
                     this.twainCapture1.jobExplorer = this.jobExplorer1;
                     this.jobExplorer1.documentViewer = this.documentViewer1;
-
-                    scanPAth = Path.Combine(Application.StartupPath, "scan", scanner.ElementoId);
-                    docPath = Path.Combine(Application.StartupPath, "scan", scanner.ElementoId, "doc.json");
+                    
+                    scanPAth = Path.Combine(Path.GetTempPath(), "scan", scanner.ElementoId);
+                    docPath = Path.Combine(Path.GetTempPath(), "scan", scanner.ElementoId, "doc.json");
                     if (Directory.Exists(scanPAth) && File.Exists(docPath))
                     {
                         documento = Newtonsoft.Json.JsonConvert.DeserializeObject<Documento>(File.ReadAllText(docPath));
@@ -58,7 +73,7 @@ namespace PikaScan
                             IdLote = "",
                             Indice = 0,
                             Paginas = new List<Pagina>(),
-                            Path = Path.Combine(Application.StartupPath, "scan", scanner.ElementoId),
+                            Path = Path.Combine(Path.GetTempPath(), "scan", scanner.ElementoId),
                             RemoteId = "",
                             TipoTrabajo = TipoTrabajo.Local,
                             UserId = ""

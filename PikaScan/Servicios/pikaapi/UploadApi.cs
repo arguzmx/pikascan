@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PikaScan.Servicios.pikaapi
 {
@@ -15,8 +16,9 @@ namespace PikaScan.Servicios.pikaapi
         public async Task EnviarPaginas(List<PaginaPika> paginas, DTOTokenScanner dto)
         {
             bool uploadCompleto = true;
-
+            
             _baseURL = string.IsNullOrEmpty(dto.UrlBase?.TrimEnd('/')) ? "http://localhost:5000/api/v1.0/upload" : dto.UrlBase?.TrimEnd('/');
+            Form1.Log($"Enviando a {_baseURL}");
 
             string transactionId = dto.VersionId.ToString();
 
@@ -71,6 +73,8 @@ namespace PikaScan.Servicios.pikaapi
                 }
                 catch (Exception ex)
                 {
+                    Form1.Log($"Error en el envío {ex.Message}");
+                    Form1.Log($"{ex}");
                     Form1.Instance.UpdateProgress(1, 1);
                     uploadCompleto =false;
                     Form1.Instance.ShowNotification($"Error enviando página {index}: {ex.Message}", System.Windows.Forms.ToolTipIcon.Error);

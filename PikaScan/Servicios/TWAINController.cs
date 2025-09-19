@@ -2,6 +2,7 @@
 using PikaScan.Modelo;
 using System;
 using System.IO;
+using System.Windows.Forms;
 
 namespace PikaScan.Servicios
 {
@@ -71,65 +72,63 @@ namespace PikaScan.Servicios
             }
             else
             {
-                g.TwainEnableDuplex(true);
+                g.TwainEnableDuplex(false);
             };
 
             g.TwainSetCompression(config.Compression);
-            g.TwainSetImageFileFormat(config.ImageFormat);  
+            g.TwainSetImageFileFormat(config.ImageFormat);
 
-            //if (config.AutoOrientation)
-            //{
-            //    if (!g.TwainSetAutomaticRotation(true))
-            //    {
-            //        r.DoneOK = false;
-            //        r.Errors.Add($"No pudo establecerselaorientación automática {config.Source}");
-            //        return r;
-            //    }
-            //}
+            if (config.AutoOrientation)
+            {
+                g.TwainSetAutomaticRotation(true);
+            } else
+            {
+                g.TwainSetAutomaticRotation(false);
+            }
 
 
-            //if (!g.TwainSetResolution(config.Resolution))
-            //{
-            //    r.DoneOK = false;
-            //    r.Errors.Add($"No pudo establcerse la resolución {config.Resolution}");
-            //    return r;
-            //}
+                //if (!g.TwainSetResolution(config.Resolution))
+                //{
+                //    r.DoneOK = false;
+                //    r.Errors.Add($"No pudo establcerse la resolución {config.Resolution}");
+                //    return r;
+                //}
 
-            //if (!g.TwainSetPixelType(config.PixelType))
-            //{
-            //    r.DoneOK = false;
-            //    r.Errors.Add($"No pudo establcerse el modo de color {config.PixelType}");
-            //    return r;
-            //}
+                //if (!g.TwainSetPixelType(config.PixelType))
+                //{
+                //    r.DoneOK = false;
+                //    r.Errors.Add($"No pudo establcerse el modo de color {config.PixelType}");
+                //    return r;
+                //}
 
-            //if (!g.TwainSetImageFileFormat(config.ImageFormat))
-            //{
-            //    r.DoneOK = false;
-            //    r.Errors.Add($"No pudo establcerse el formato {config.ImageFormat}");
-            //    return r;
-            //}
+                //if (!g.TwainSetImageFileFormat(config.ImageFormat))
+                //{
+                //    r.DoneOK = false;
+                //    r.Errors.Add($"No pudo establcerse el formato {config.ImageFormat}");
+                //    return r;
+                //}
 
-            //if (!g.TwainSetCompression(config.Compression))
-            //{
-            //    r.DoneOK = false;
-            //    r.Errors.Add($"No pudo establcerse la compresión {config.Compression}");
-            //    return r;
-            //}
+                //if (!g.TwainSetCompression(config.Compression))
+                //{
+                //    r.DoneOK = false;
+                //    r.Errors.Add($"No pudo establcerse la compresión {config.Compression}");
+                //    return r;
+                //}
 
-            //if (config.Duplex)
-            //{
-            //    if (!g.TwainEnableDuplex(true))
-            //    {
-            //        r.DoneOK = false;
-            //        r.Errors.Add($"No pudo establcerse el modo duplex");
-            //        return r;
-            //    }
-            //}
+                //if (config.Duplex)
+                //{
+                //    if (!g.TwainEnableDuplex(true))
+                //    {
+                //        r.DoneOK = false;
+                //        r.Errors.Add($"No pudo establcerse el modo duplex");
+                //        return r;
+                //    }
+                //}
 
 
-            #endregion
+                #endregion
 
-            g.TwainSetHideUI(true);
+                g.TwainSetHideUI(true);
 
          
 
@@ -152,22 +151,16 @@ namespace PikaScan.Servicios
                     Extesion = ".TIF";
                     break;
             }
-
-
       
 
             do
             {
                 int index = 1;
                 string FileName = Path.Combine(appSettings.AppPath, $"TMP-{index.ToString().PadLeft(8, '0')}") + Extesion;
-
                 if (File.Exists(FileName)) {
                     File.Delete(FileName);
                 }
                 int ImageID = g.TwainAcquireToGdPictureImage(handle);
-                var x = g.TwainGetState();
-                var bd = g.GetBitDepth(ImageID); 
-                g.SaveAsBMP(ImageID, FileName + ".bmp");
 
                 if (ImageID > 0)
                 {
@@ -192,10 +185,10 @@ namespace PikaScan.Servicios
                     g.ReleaseGdPictureImage(ImageID);
 
                     base.AddPage(new FileInfo(FileName), d, SourceType.Scanner, 0, this.isDemoMode, 0);
-                    if (File.Exists(FileName))
-                    {
-                        File.Delete(FileName);
-                    }
+                    //if (File.Exists(FileName))
+                    //{
+                    //    File.Delete(FileName);
+                    //}
                 }
 
                 OnDoEvents();

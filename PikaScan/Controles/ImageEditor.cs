@@ -284,7 +284,7 @@ namespace PikaScan.Controles
 
         private void CreateBackup()
         {
-            this.BackupSource = Path.Combine(Application.StartupPath, "temp.bak");
+            this.BackupSource = Path.Combine(Path.GetTempPath(), "temp.bak");
 
             if (File.Exists(this.BackupSource))
             {
