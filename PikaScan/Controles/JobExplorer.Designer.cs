@@ -35,20 +35,21 @@
             this.ImlTvDocs = new System.Windows.Forms.ImageList(this.components);
             this.panelInfo = new System.Windows.Forms.Panel();
             this.lblJobName = new System.Windows.Forms.Label();
+            this.pbInfo = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tsLevel = new System.Windows.Forms.ToolStrip();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.ImLvThumbs = new Manina.Windows.Forms.ImageListView();
             this.btnDel = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bntInsertMode = new System.Windows.Forms.ToolStripButton();
-            this.pbInfo = new System.Windows.Forms.PictureBox();
+            this.ImLvThumbs = new Manina.Windows.Forms.ImageListView();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerExplorer)).BeginInit();
             this.splitContainerExplorer.Panel1.SuspendLayout();
             this.splitContainerExplorer.SuspendLayout();
             this.panelInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbInfo)).BeginInit();
             this.panel1.SuspendLayout();
             this.tsLevel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbInfo)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainerExplorer
@@ -110,6 +111,18 @@
             this.lblJobName.TabIndex = 1;
             this.lblJobName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pbInfo
+            // 
+            this.pbInfo.BackColor = System.Drawing.SystemColors.Control;
+            this.pbInfo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pbInfo.Image = global::PikaScan.Properties.Resources.box_empty_48;
+            this.pbInfo.Location = new System.Drawing.Point(0, 0);
+            this.pbInfo.Name = "pbInfo";
+            this.pbInfo.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.pbInfo.Size = new System.Drawing.Size(60, 60);
+            this.pbInfo.TabIndex = 0;
+            this.pbInfo.TabStop = false;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.tsLevel);
@@ -125,21 +138,46 @@
             this.tsLevel.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.tsLevel.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.tsLevel.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnDel,
+            this.toolStripButton1,
+            this.bntInsertMode,
             this.toolStripSeparator1,
-            this.bntInsertMode});
+            this.btnDel});
             this.tsLevel.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.tsLevel.Location = new System.Drawing.Point(0, 0);
             this.tsLevel.Name = "tsLevel";
-            this.tsLevel.Size = new System.Drawing.Size(111, 42);
+            this.tsLevel.Size = new System.Drawing.Size(193, 42);
             this.tsLevel.TabIndex = 5;
             this.tsLevel.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.tsLevel_ItemClicked);
+            // 
+            // btnDel
+            // 
+            this.btnDel.Image = global::PikaScan.Properties.Resources.del_round_24;
+            this.btnDel.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(51, 39);
+            this.btnDel.Text = "Limpiar";
+            this.btnDel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnDel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnDel.ToolTipText = "Elimina las páginas marcadas.";
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Margin = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 23);
+            // 
+            // bntInsertMode
+            // 
+            this.bntInsertMode.CheckOnClick = true;
+            this.bntInsertMode.Image = global::PikaScan.Properties.Resources.chevron_double_down_icon;
+            this.bntInsertMode.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bntInsertMode.Name = "bntInsertMode";
+            this.bntInsertMode.Size = new System.Drawing.Size(50, 39);
+            this.bntInsertMode.Text = "Insertar";
+            this.bntInsertMode.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.bntInsertMode.ToolTipText = "Insertar las páginas en la posición en vez del al final.";
+            this.bntInsertMode.Click += new System.EventHandler(this.bntInsertMode_Click);
             // 
             // ImLvThumbs
             // 
@@ -159,41 +197,17 @@
             this.ImLvThumbs.ItemCheckBoxClick += new Manina.Windows.Forms.ItemCheckBoxClickEventHandler(this.ImLvThumbs_ItemCheckBoxClick);
             this.ImLvThumbs.SelectionChanged += new System.EventHandler(this.ImLvThumbs_SelectionChanged);
             // 
-            // btnDel
+            // toolStripButton1
             // 
-            this.btnDel.Image = global::PikaScan.Properties.Resources.minus_24;
-            this.btnDel.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(54, 39);
-            this.btnDel.Text = "Eliminar";
-            this.btnDel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnDel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnDel.ToolTipText = "Elimina las páginas marcadas.";
-            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
-            // 
-            // bntInsertMode
-            // 
-            this.bntInsertMode.CheckOnClick = true;
-            this.bntInsertMode.Image = global::PikaScan.Properties.Resources.chevron_double_down_icon;
-            this.bntInsertMode.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.bntInsertMode.Name = "bntInsertMode";
-            this.bntInsertMode.Size = new System.Drawing.Size(50, 39);
-            this.bntInsertMode.Text = "Insertar";
-            this.bntInsertMode.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.bntInsertMode.ToolTipText = "Insertar las páginas en la posición en vez del al final.";
-            this.bntInsertMode.Click += new System.EventHandler(this.bntInsertMode_Click);
-            // 
-            // pbInfo
-            // 
-            this.pbInfo.BackColor = System.Drawing.SystemColors.Control;
-            this.pbInfo.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pbInfo.Image = global::PikaScan.Properties.Resources.box_empty_48;
-            this.pbInfo.Location = new System.Drawing.Point(0, 0);
-            this.pbInfo.Name = "pbInfo";
-            this.pbInfo.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.pbInfo.Size = new System.Drawing.Size(60, 60);
-            this.pbInfo.TabIndex = 0;
-            this.pbInfo.TabStop = false;
+            this.toolStripButton1.Image = global::PikaScan.Properties.Resources.minus_24;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(54, 39);
+            this.toolStripButton1.Text = "Eliminar";
+            this.toolStripButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton1.ToolTipText = "Elimina las páginas marcadas.";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // JobExplorer
             // 
@@ -209,11 +223,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerExplorer)).EndInit();
             this.splitContainerExplorer.ResumeLayout(false);
             this.panelInfo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbInfo)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tsLevel.ResumeLayout(false);
             this.tsLevel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbInfo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -232,5 +246,6 @@
         private System.Windows.Forms.ToolStripButton btnDel;
         private System.Windows.Forms.ToolStripButton bntInsertMode;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }

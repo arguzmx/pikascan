@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Windows.Forms;
 
 namespace PikaScan
@@ -17,13 +18,16 @@ namespace PikaScan
         public static Form1 Instance { get; private set; }
         private string scanPAth;
         private string docPath;
-
+        private string version = "1.2.3";
         public static void Log(string info)
         {
-            string logPath = Path.Combine(Path.GetTempPath(), "log.txt");
+            string logPath = Path.Combine(Path.GetTempPath(), "pika-scan", "pika-scan-log.txt");
             try
             {
-                File.AppendAllText(logPath, $"{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}\t{info}{Environment.NewLine}");
+                string entry = $"{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}\t{info}{Environment.NewLine}";
+                
+                File.AppendAllText(logPath, entry);
+                Form1.Instance.txtLogs.AppendText(entry);
             }
             catch (Exception)
             {
@@ -50,12 +54,12 @@ namespace PikaScan
                 {
                     Log("Deeplink recibido");
                     Log(deeplink);
-                    this.Text = $"PikaScan - {scanner.NombreDocumento}";
+                    this.Text = $"PikaScan {version} - {WebUtility.UrlDecode( scanner.NombreDocumento)}";
                     this.twainCapture1.jobExplorer = this.jobExplorer1;
                     this.jobExplorer1.documentViewer = this.documentViewer1;
                     
-                    scanPAth = Path.Combine(Path.GetTempPath(), "scan", scanner.ElementoId);
-                    docPath = Path.Combine(Path.GetTempPath(), "scan", scanner.ElementoId, "doc.json");
+                    scanPAth = Path.Combine(Path.GetTempPath(), "pika-scan", scanner.ElementoId);
+                    docPath = Path.Combine(Path.GetTempPath(), "pika-scan", scanner.ElementoId, "doc.json");
                     if (Directory.Exists(scanPAth) && File.Exists(docPath))
                     {
                         documento = Newtonsoft.Json.JsonConvert.DeserializeObject<Documento>(File.ReadAllText(docPath));
@@ -73,7 +77,7 @@ namespace PikaScan
                             IdLote = "",
                             Indice = 0,
                             Paginas = new List<Pagina>(),
-                            Path = Path.Combine(Path.GetTempPath(), "scan", scanner.ElementoId),
+                            Path = Path.Combine(Path.GetTempPath(), "pika-scan", scanner.ElementoId),
                             RemoteId = "",
                             TipoTrabajo = TipoTrabajo.Local,
                             UserId = ""
@@ -307,6 +311,13 @@ namespace PikaScan
         public void eliminaPagina()
         {
             this.jobExplorer1.EliminaArchivosEnviados();
+            MessageBox.Show("El envío ha finalizado exitosamente y la aplicación se cerrará.", "Envío finalizado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Close();
+        }
+
+        private void tsbLogs_Click(object sender, EventArgs e)
+        {
+            txtLogs.Visible = !txtLogs.Visible;
         }
     }
 }

@@ -86,51 +86,49 @@ namespace PikaScan.Servicios
                 g.TwainSetAutomaticRotation(false);
             }
 
+            g.TwainSetHideUI(!config.MostrarUI);   
 
-                //if (!g.TwainSetResolution(config.Resolution))
-                //{
-                //    r.DoneOK = false;
-                //    r.Errors.Add($"No pudo establcerse la resolución {config.Resolution}");
-                //    return r;
-                //}
+            //if (!g.TwainSetResolution(config.Resolution))
+            //{
+            //    r.DoneOK = false;
+            //    r.Errors.Add($"No pudo establcerse la resolución {config.Resolution}");
+            //    return r;
+            //}
 
-                //if (!g.TwainSetPixelType(config.PixelType))
-                //{
-                //    r.DoneOK = false;
-                //    r.Errors.Add($"No pudo establcerse el modo de color {config.PixelType}");
-                //    return r;
-                //}
+            //if (!g.TwainSetPixelType(config.PixelType))
+            //{
+            //    r.DoneOK = false;
+            //    r.Errors.Add($"No pudo establcerse el modo de color {config.PixelType}");
+            //    return r;
+            //}
 
-                //if (!g.TwainSetImageFileFormat(config.ImageFormat))
-                //{
-                //    r.DoneOK = false;
-                //    r.Errors.Add($"No pudo establcerse el formato {config.ImageFormat}");
-                //    return r;
-                //}
+            //if (!g.TwainSetImageFileFormat(config.ImageFormat))
+            //{
+            //    r.DoneOK = false;
+            //    r.Errors.Add($"No pudo establcerse el formato {config.ImageFormat}");
+            //    return r;
+            //}
 
-                //if (!g.TwainSetCompression(config.Compression))
-                //{
-                //    r.DoneOK = false;
-                //    r.Errors.Add($"No pudo establcerse la compresión {config.Compression}");
-                //    return r;
-                //}
+            //if (!g.TwainSetCompression(config.Compression))
+            //{
+            //    r.DoneOK = false;
+            //    r.Errors.Add($"No pudo establcerse la compresión {config.Compression}");
+            //    return r;
+            //}
 
-                //if (config.Duplex)
-                //{
-                //    if (!g.TwainEnableDuplex(true))
-                //    {
-                //        r.DoneOK = false;
-                //        r.Errors.Add($"No pudo establcerse el modo duplex");
-                //        return r;
-                //    }
-                //}
+            //if (config.Duplex)
+            //{
+            //    if (!g.TwainEnableDuplex(true))
+            //    {
+            //        r.DoneOK = false;
+            //        r.Errors.Add($"No pudo establcerse el modo duplex");
+            //        return r;
+            //    }
+            //}
 
 
-                #endregion
-
-                g.TwainSetHideUI(true);
-
-         
+            #endregion
+        
 
             string Extesion = ".RAW";
             switch (config.ImageFormat)

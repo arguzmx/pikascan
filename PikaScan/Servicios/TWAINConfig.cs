@@ -11,6 +11,7 @@ namespace PikaScan.Servicios
         public TwainPixelType PixelType { get; set; }
         public TwainImageFileFormats ImageFormat { get; set; }
         public bool AutoOrientation { get; set; }
+        public bool MostrarUI { get; set; }
 
     }
 }

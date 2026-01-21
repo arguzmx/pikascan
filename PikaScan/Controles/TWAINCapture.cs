@@ -1,4 +1,6 @@
 ﻿using GdPicture;
+using ImageProcessor.Processors;
+using Newtonsoft.Json;
 using Ninject.Planning;
 using PikaScan.Modelo;
 using PikaScan.Servicios;
@@ -8,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -37,6 +40,7 @@ namespace PikaScan.Controles
         private bool capturando = false;
         public string DocumentId { get; set; }
         public JobExplorer jobExplorer { get; set; }
+        private TWAINConfig twainConfig = null;
 
         public DocumentViewer documentViewer { get; set; }
 
@@ -101,11 +105,25 @@ namespace PikaScan.Controles
                 this.cmbScanners.ValueMember = "Value";
                 this.cmbScanners.DisplayMember = "Display";
                 this.cmbScanners.DataSource = l;
+                twainConfig = ReadConfig();
 
+                if(twainConfig != null && twainConfig.MostrarUI)
+                {
+                    this.chkSHowUI.Checked = true;  
+                }
                 if (this.cmbScanners.Items.Count > 0)
                 {
-                    currentSource = (this.cmbScanners.Items[0] as ParCombo).Display;
+                    if(twainConfig != null)
+                    {
+                        currentSource = twainConfig.Source;
+                        SetComboBoxSelectionByText(cmbScanners, currentSource);
+                    }
+                    else
+                    {
+                        currentSource = (this.cmbScanners.Items[0] as ParCombo).Display;
+                    }
                     GetSourceConfig(currentSource);
+
                 }
             }
             catch (Exception ex)
@@ -116,6 +134,8 @@ namespace PikaScan.Controles
             LoadingScanners = false;
 
         }
+
+        
 
         private void GetCompressions()
         {
@@ -224,10 +244,24 @@ namespace PikaScan.Controles
 
             if (lres.Count > 0)
             {
-                SetResolution(int.Parse(lres[0].Value));
+                if (this.twainConfig != null)
+                {
+                    SetResolution(twainConfig.Resolution);
+                }
+                else
+                {
+                    SetResolution(int.Parse(lres[0].Value));
+                }
+                    
             }
 
             this.cmbRes.DataSource = lres;
+
+            if(this.twainConfig != null)
+            {
+                SetComboBoxSelectionByText(cmbRes, $"{twainConfig.Resolution} dpi");
+            }
+               
         }
 
 
@@ -239,6 +273,11 @@ namespace PikaScan.Controles
             {
                 chkOrientar.Visible = true;
                 chkOrientar.Checked = false;
+            }
+
+            if(chkOrientar.Visible && this.twainConfig != null)
+            {
+                chkOrientar.Checked = this.twainConfig.AutoOrientation;
             }
         }
 
@@ -259,16 +298,54 @@ namespace PikaScan.Controles
                     ChkDuplex.Checked = false;
                     break;
 
-                case 2:
-                    ChkDuplex.Visible = true;
-                    ChkDuplex.Text = "Duplex 2 pasadas";
-                    ChkDuplex.Checked = false;
-                    break;
+                //case 2:
+                //    ChkDuplex.Visible = true;
+                //    ChkDuplex.Text = "Duplex 2 pasadas";
+                //    ChkDuplex.Checked = false;
+                //    break;
 
             }
 
+            if (ChkDuplex.Visible && this.twainConfig != null)
+            {
+                ChkDuplex.Checked = this.twainConfig.Duplex;
+            }
         }
 
+        public void SaveConfig(string config)
+        {
+            string configPath = Path.Combine(Path.GetTempPath(), "pika-scan", "twain-config.json");
+            try
+            {
+                if ((File.Exists(configPath)))
+                {
+                    File.Delete(configPath);
+                }
+
+                File.AppendAllText(configPath, config);
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+
+        public TWAINConfig ReadConfig()
+        {
+            string configPath = Path.Combine(Path.GetTempPath(), "pika-scan", "twain-config.json");
+            try
+            {
+                if (File.Exists(configPath))
+                {
+                    return JsonConvert.DeserializeObject<TWAINConfig>(File.ReadAllText(configPath));
+                }
+            }
+            catch (Exception)
+            {
+            }
+
+            return null;
+        }
 
         private void SetResolution(int res)
         {
@@ -350,11 +427,42 @@ namespace PikaScan.Controles
 
             if (lpix.Count > 0)
             {
-                TwainPixelType pt = (TwainPixelType)int.Parse((lpix[0] as ParCombo).Value);
-                this.SetPixelType(pt);
+                if(this.twainConfig != null)
+                {
+                    TwainPixelType ptw = this.twainConfig.PixelType;
+                    this.SetPixelType(ptw);
+                }
+                else
+                {
+                    TwainPixelType pt = (TwainPixelType)int.Parse((lpix[0] as ParCombo).Value);
+                    this.SetPixelType(pt);
+                }
             }
 
             this.cmbPixelType.DataSource = lpix;
+
+
+            if(this.twainConfig != null)
+            {
+                string pixlabel = "";
+                switch (twainConfig.PixelType)
+                {
+                    case TwainPixelType.TWPT_BW:
+                        pixlabel = "Bitonal";
+                        break;
+
+                    case TwainPixelType.TWPT_GRAY:
+                        pixlabel = "Grises";
+                        break;
+
+
+                    default:
+                        pixlabel = "Color";
+                        break;
+                }
+
+                SetComboBoxSelectionByText(cmbPixelType, pixlabel);
+            }
         }
 
 
@@ -403,11 +511,40 @@ namespace PikaScan.Controles
 
             if (lformat.Count > 0)
             {
-                TwainImageFileFormats format = (TwainImageFileFormats)int.Parse((lformat[0] as ParCombo).Value);
-                SetFileFormat(format);
+                if (this.twainConfig != null)
+                {
+                    TwainImageFileFormats fmt = this.twainConfig.ImageFormat;
+                    SetFileFormat(fmt);
+                }
+                else
+                {
+                    TwainImageFileFormats format = (TwainImageFileFormats)int.Parse((lformat[0] as ParCombo).Value);
+                    SetFileFormat(format);
+                }
             }
 
             this.cmbFormat.DataSource = lformat;
+
+            if(this.twainConfig != null)
+            {
+                string formatlabel = "";
+                switch (this.twainConfig.ImageFormat)
+                {
+                    case TwainImageFileFormats.TWFF_BMP:
+                        formatlabel = "BMP";
+                        break;
+                    case TwainImageFileFormats.TWFF_PNG:
+                        formatlabel = "PNG";
+                        break;
+                    case TwainImageFileFormats.TWFF_TIFF:
+                        formatlabel = "TIFF";
+                        break;
+                    case TwainImageFileFormats.TWFF_JFIF:
+                        formatlabel = "JPEG";
+                        break;
+                }
+                SetComboBoxSelectionByText(cmbFormat, formatlabel);
+            }
         }
 
 
@@ -450,8 +587,8 @@ namespace PikaScan.Controles
                 if (OpenSource())
                 {
                     this.GetAutoOrientation();
-                    this.GetResolutions();
                     this.GetDuplexing();
+                    this.GetResolutions();
                     CloseSource();
                     UIHelper.ShowNotification($"Conectado al scanner {id}", ToolTipIcon.Info);
                 }
@@ -616,14 +753,16 @@ namespace PikaScan.Controles
                 CloseSource();
             }
 
-            var config = GetConfigFrom();
+            TWAINConfig config = GetConfigFrom();
             if (config == null)
             {
                 UIHelper.ShowNotification("La configuración no es válida", ToolTipIcon.Warning);
                 return;
             }
 
-            
+            string lastConfig = JsonConvert.SerializeObject(config); ;
+            SaveConfig(lastConfig);
+
             //controller = CompositionRoot.Resolve<TWAINController>();
             controller.handle = this.h;
             controller.config = config;
@@ -707,6 +846,7 @@ namespace PikaScan.Controles
                 c.Duplex = true;
             }
 
+            c.MostrarUI = chkSHowUI.Checked;
 
             c.AutoOrientation = chkOrientar.Checked;
 
@@ -757,6 +897,41 @@ namespace PikaScan.Controles
         private void cmbCompres_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+
+        /// <summary>
+        /// Sets the selected item in the ComboBox based on the provided text.
+        /// If the text matches an item (case-insensitive), it will be selected.
+        /// </summary>
+        /// <param name="comboBox">The ComboBox to update.</param>
+        /// <param name="text">The text to match against ComboBox items.</param>
+        public void SetComboBoxSelectionByText(ComboBox comboBox, string text)
+        {
+            if (comboBox == null || string.IsNullOrWhiteSpace(text))
+                return;
+
+            // Find the index of the item that matches the text (case-insensitive)
+            int index = comboBox.FindStringExact(text);
+
+            if (index >= 0)
+            {
+                comboBox.SelectedIndex = index;
+            }
+            else
+            {
+                // Optional: fallback to partial match
+                index = comboBox.FindString(text);
+                if (index >= 0)
+                {
+                    comboBox.SelectedIndex = index;
+                }
+                else
+                {
+                    // Optional: clear selection if no match
+                    comboBox.SelectedIndex = -1;
+                }
+            }
         }
     }
 }

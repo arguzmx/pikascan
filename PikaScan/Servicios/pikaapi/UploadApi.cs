@@ -105,6 +105,7 @@ namespace PikaScan.Servicios.pikaapi
                 }
                 catch (Exception ex)
                 {
+                    Form1.Log($"Error en el envío {ex.Message}\r\n{ex}");
                     Form1.Instance.UpdateProgress(1, 1);
                     Form1.Instance.ShowNotification($"Error al finalizar la transacción de carga: {ex.Message}", System.Windows.Forms.ToolTipIcon.Error);
                 }

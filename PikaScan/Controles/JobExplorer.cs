@@ -629,20 +629,19 @@ namespace PikaScan.Controles
 
         private void btnDel_Click(object sender, EventArgs e)
         {
-            if (this.ImLvThumbs.CheckedItems.Count > 0)
-            {
-                var yes = MessageBox.Show("¿Desea eliminar los elemento seleccioandos de manera permanente?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if(this.ImLvThumbs.Items.Count> 0) {
+                var yes = MessageBox.Show("¿Desea eliminar todos los elementos manera permanente?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
                 if (yes == DialogResult.No)
                 {
                     return;
                 }
 
-                Form1.Instance.RemovePages(ImLvThumbs.CheckedItems.Select(x => x.FileName).ToList());
-                PopulateListView(Form1.documento);
-            } else
-            {
+                var pages = ImLvThumbs.Items.Select(x => x.FileName).ToList();
 
+                Form1.Instance.RemovePages(pages);
+                PopulateListView(Form1.documento);
             }
+            
         }
 
         public void EliminaArchivosEnviados()
@@ -671,6 +670,25 @@ namespace PikaScan.Controles
         private void ImLvThumbs_ItemCheckBoxClick(object sender, Manina.Windows.Forms.ItemEventArgs e)
         {
             RaiseLastSelectedItem();
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            if (this.ImLvThumbs.CheckedItems.Count > 0)
+            {
+                var yes = MessageBox.Show("¿Desea eliminar los elemento seleccionados de manera permanente?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                if (yes == DialogResult.No)
+                {
+                    return;
+                }
+
+                Form1.Instance.RemovePages(ImLvThumbs.CheckedItems.Select(x => x.FileName).ToList());
+                PopulateListView(Form1.documento);
+            }
+            else
+            {
+
+            }
         }
     }
 }

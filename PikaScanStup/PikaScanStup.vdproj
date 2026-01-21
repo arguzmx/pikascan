@@ -15,6 +15,24 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_02EC964A008B4A12B1DA4EBA3C9FAA5E"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_0332AC464AEA4200A47CFBE32E2FDB6A"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_04D3EBB03DB5411FB6E2A3CA22DEE88C"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_0DC51572D6AD9B88C0C6B223A2119AAA"
         "OwnerKey" = "8:_B5E79B3F9DC04300AB99CDE434333822"
         "MsmSig" = "8:_UNDEFINED"
@@ -39,7 +57,19 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_1B51F43775864C208F173B22531235B0"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_1F1F24AA70584658A363AB00D181C00F"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_2060162B50DC488DAACB73C410376A71"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -69,8 +99,20 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_23FCD41BE5934EAA9381EDA26B313BD2"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_2768D326FDA7486457F471F55AC4126B"
         "OwnerKey" = "8:_B5E79B3F9DC04300AB99CDE434333822"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_2EF902C052234092B90F42D411F25A20"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -105,6 +147,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_4B91024838A54410BED6D83EDC04E504"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_4C9FD8CEADE1E51D0E62D2802500D356"
         "OwnerKey" = "8:_B23D08FDE850BE285985484F1FF408D5"
         "MsmSig" = "8:_UNDEFINED"
@@ -129,6 +177,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_5A97E07210284F8BA4AA23383CB1C3F4"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_6104C271B8B4624B5A6BEB882ECE3028"
         "OwnerKey" = "8:_B5E79B3F9DC04300AB99CDE434333822"
         "MsmSig" = "8:_UNDEFINED"
@@ -147,6 +201,18 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_6664F1AB913A4DB1A1891C934ADED339"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_6C123E589DFF4BD99E0B6C6A18B0F218"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_7732FEBBA5E841BB18B5B5D326F1BD42"
         "OwnerKey" = "8:_AD2B01D7B033C25DA2961C76CE6175C9"
         "MsmSig" = "8:_UNDEFINED"
@@ -161,6 +227,18 @@
         {
         "MsmKey" = "8:_818B1C538C65C73E65D59253C8EF2F35"
         "OwnerKey" = "8:_B5E79B3F9DC04300AB99CDE434333822"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_868D2C9B936C45DFA501BAA6F4A3F301"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_8D96A0EF8BC948F2AE703694D9F722A0"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -231,8 +309,44 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_BCD4842C4773437C883086326850CBCD"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C9ED8E9CB9A346D3B7772D44838DB25A"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_CFDC10C748734272B1CC72D7F2C63885"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_D8F28D9B908C0FD4FA8B010F6EC63A84"
         "OwnerKey" = "8:_B5E79B3F9DC04300AB99CDE434333822"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_EC1CA39D95B44CC3A1C39D96736D35D1"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_ED52223239AE44D6821EDF0147300C37"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_F354DA01071943F69A61FCA89D2CDB78"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -245,12 +359,6 @@
         {
         "MsmKey" = "8:_FD409E71A9A11B6007B3E1EE96981786"
         "OwnerKey" = "8:_B5E79B3F9DC04300AB99CDE434333822"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_6104C271B8B4624B5A6BEB882ECE3028"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -379,6 +487,12 @@
         "OwnerKey" = "8:_35B66DBAE6B702D407E6F7F92A06AE04"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_6104C271B8B4624B5A6BEB882ECE3028"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -397,6 +511,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -413,6 +543,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
     }
     "Deployable"
@@ -442,6 +588,66 @@
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_02EC964A008B4A12B1DA4EBA3C9FAA5E"
+            {
+            "SourcePath" = "8:C:\\Program Files (x86)\\GdPicture.NET 8\\Redist\\GdPicture.NET.twain.gdtwain.dll"
+            "TargetName" = "8:GdPicture.NET.twain.gdtwain.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_95BA9A2234A845C5A5C63448B7927BBF"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0332AC464AEA4200A47CFBE32E2FDB6A"
+            {
+            "SourcePath" = "8:C:\\Program Files (x86)\\GdPicture.NET 8\\Redist\\OCR\\spa.traineddata"
+            "TargetName" = "8:spa.traineddata"
+            "Tag" = "8:"
+            "Folder" = "8:_95BA9A2234A845C5A5C63448B7927BBF"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_04D3EBB03DB5411FB6E2A3CA22DEE88C"
+            {
+            "SourcePath" = "8:C:\\Program Files (x86)\\GdPicture.NET 8\\Redist\\GdPicture.NET.barcode.1d.reader.dll"
+            "TargetName" = "8:GdPicture.NET.barcode.1d.reader.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_95BA9A2234A845C5A5C63448B7927BBF"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_0DC51572D6AD9B88C0C6B223A2119AAA"
             {
             "AssemblyRegister" = "3:1"
@@ -535,10 +741,50 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1B51F43775864C208F173B22531235B0"
+            {
+            "SourcePath" = "8:C:\\Program Files (x86)\\GdPicture.NET 8\\Redist\\GdPicture.NET.omr.64.dll"
+            "TargetName" = "8:GdPicture.NET.omr.64.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_95BA9A2234A845C5A5C63448B7927BBF"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1F1F24AA70584658A363AB00D181C00F"
             {
             "SourcePath" = "8:..\\PikaScan\\Aniket-Suvarna-Box-Regular-Bx-aperture.ico"
             "TargetName" = "8:Aniket-Suvarna-Box-Regular-Bx-aperture.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_95BA9A2234A845C5A5C63448B7927BBF"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2060162B50DC488DAACB73C410376A71"
+            {
+            "SourcePath" = "8:C:\\Program Files (x86)\\GdPicture.NET 8\\Redist\\GdPicture.NET.ocr.tesseract.3.64.dll"
+            "TargetName" = "8:GdPicture.NET.ocr.tesseract.3.64.dll"
             "Tag" = "8:"
             "Folder" = "8:_95BA9A2234A845C5A5C63448B7927BBF"
             "Condition" = "8:"
@@ -586,6 +832,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_23FCD41BE5934EAA9381EDA26B313BD2"
+            {
+            "SourcePath" = "8:C:\\Program Files (x86)\\GdPicture.NET 8\\Redist\\GdPicture.NET.filters.64.dll"
+            "TargetName" = "8:GdPicture.NET.filters.64.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_95BA9A2234A845C5A5C63448B7927BBF"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_2768D326FDA7486457F471F55AC4126B"
             {
             "AssemblyRegister" = "3:1"
@@ -615,6 +881,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2EF902C052234092B90F42D411F25A20"
+            {
+            "SourcePath" = "8:C:\\Program Files (x86)\\GdPicture.NET 8\\Redist\\GdPicture.NET.barcode.dm.reader.64.dll"
+            "TargetName" = "8:GdPicture.NET.barcode.dm.reader.64.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_95BA9A2234A845C5A5C63448B7927BBF"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_35B66DBAE6B702D407E6F7F92A06AE04"
@@ -710,6 +996,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4B91024838A54410BED6D83EDC04E504"
+            {
+            "SourcePath" = "8:C:\\Program Files (x86)\\GdPicture.NET 8\\Redist\\GdPicture.NET.jbig2.encoder.64.dll"
+            "TargetName" = "8:GdPicture.NET.jbig2.encoder.64.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_95BA9A2234A845C5A5C63448B7927BBF"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_4C9FD8CEADE1E51D0E62D2802500D356"
             {
             "AssemblyRegister" = "3:1"
@@ -770,6 +1076,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5A97E07210284F8BA4AA23383CB1C3F4"
+            {
+            "SourcePath" = "8:C:\\Program Files (x86)\\GdPicture.NET 8\\Redist\\GdPicture.NET.barcode.1d.reader.64.dll"
+            "TargetName" = "8:GdPicture.NET.barcode.1d.reader.64.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_95BA9A2234A845C5A5C63448B7927BBF"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_6104C271B8B4624B5A6BEB882ECE3028"
@@ -834,6 +1160,46 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6664F1AB913A4DB1A1891C934ADED339"
+            {
+            "SourcePath" = "8:C:\\Program Files (x86)\\GdPicture.NET 8\\Redist\\GdPicture.NET.image.gdimgplug.dll"
+            "TargetName" = "8:GdPicture.NET.image.gdimgplug.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_95BA9A2234A845C5A5C63448B7927BBF"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6C123E589DFF4BD99E0B6C6A18B0F218"
+            {
+            "SourcePath" = "8:C:\\Program Files (x86)\\GdPicture.NET 8\\Redist\\GdPicture.NET.twain.gdtwain.64.dll"
+            "TargetName" = "8:GdPicture.NET.twain.gdtwain.64.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_95BA9A2234A845C5A5C63448B7927BBF"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_7732FEBBA5E841BB18B5B5D326F1BD42"
             {
             "AssemblyRegister" = "3:1"
@@ -894,6 +1260,46 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_868D2C9B936C45DFA501BAA6F4A3F301"
+            {
+            "SourcePath" = "8:C:\\Program Files (x86)\\GdPicture.NET 8\\Redist\\GdPicture.NET.omr.dll"
+            "TargetName" = "8:GdPicture.NET.omr.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_95BA9A2234A845C5A5C63448B7927BBF"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8D96A0EF8BC948F2AE703694D9F722A0"
+            {
+            "SourcePath" = "8:C:\\Program Files (x86)\\GdPicture.NET 8\\Redist\\GdPicture.NET.jbig2.encoder.dll"
+            "TargetName" = "8:GdPicture.NET.jbig2.encoder.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_95BA9A2234A845C5A5C63448B7927BBF"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_9E6E709A3587A4A6B181CA39F1A1E300"
@@ -1051,6 +1457,66 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BCD4842C4773437C883086326850CBCD"
+            {
+            "SourcePath" = "8:C:\\Program Files (x86)\\GdPicture.NET 8\\Redist\\GdPicture.NET.image.gdimgplug.64.dll"
+            "TargetName" = "8:GdPicture.NET.image.gdimgplug.64.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_95BA9A2234A845C5A5C63448B7927BBF"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C9ED8E9CB9A346D3B7772D44838DB25A"
+            {
+            "SourcePath" = "8:C:\\Program Files (x86)\\GdPicture.NET 8\\Redist\\GdPicture.NET.barcode.dm.reader.dll"
+            "TargetName" = "8:GdPicture.NET.barcode.dm.reader.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_95BA9A2234A845C5A5C63448B7927BBF"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_CFDC10C748734272B1CC72D7F2C63885"
+            {
+            "SourcePath" = "8:C:\\Program Files (x86)\\GdPicture.NET 8\\Redist\\GdPicture.NET.ocr.tesseract.3.dll"
+            "TargetName" = "8:GdPicture.NET.ocr.tesseract.3.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_95BA9A2234A845C5A5C63448B7927BBF"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_D8F28D9B908C0FD4FA8B010F6EC63A84"
             {
             "AssemblyRegister" = "3:1"
@@ -1080,6 +1546,66 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_EC1CA39D95B44CC3A1C39D96736D35D1"
+            {
+            "SourcePath" = "8:C:\\Program Files (x86)\\GdPicture.NET 8\\Redist\\GdPicture.NET.filters.dll"
+            "TargetName" = "8:GdPicture.NET.filters.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_95BA9A2234A845C5A5C63448B7927BBF"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_ED52223239AE44D6821EDF0147300C37"
+            {
+            "SourcePath" = "8:C:\\Program Files (x86)\\GdPicture.NET 8\\Redist\\GdPicture.NET.barcode.qr.reader.64.dll"
+            "TargetName" = "8:GdPicture.NET.barcode.qr.reader.64.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_95BA9A2234A845C5A5C63448B7927BBF"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F354DA01071943F69A61FCA89D2CDB78"
+            {
+            "SourcePath" = "8:C:\\Program Files (x86)\\GdPicture.NET 8\\Redist\\GdPicture.NET.barcode.qr.reader.dll"
+            "TargetName" = "8:GdPicture.NET.barcode.qr.reader.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_95BA9A2234A845C5A5C63448B7927BBF"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_FD409E71A9A11B6007B3E1EE96981786"
@@ -1169,15 +1695,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Pika Scan"
-        "ProductCode" = "8:{9F9ADEFE-FBFE-443E-9B30-3F2C6448DDB7}"
-        "PackageCode" = "8:{F4CD8F7E-4AAC-468A-AB72-AC602FE0145B}"
+        "ProductCode" = "8:{9284A8AB-AB3E-4A52-B37F-8094B2BBEA59}"
+        "PackageCode" = "8:{E14F8DBA-4F9A-4779-96CB-ECAE9FACAC9D}"
         "UpgradeCode" = "8:{8228309A-4364-475C-B7F6-0D6494DC2B23}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.2"
+        "ProductVersion" = "8:1.2.4"
         "Manufacturer" = "8:Arguz"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
